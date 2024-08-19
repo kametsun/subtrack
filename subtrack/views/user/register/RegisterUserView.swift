@@ -15,17 +15,35 @@ struct RegisterUserView: View {
 
     init(viewModel: RegisterUserViewModel) {
         self.viewModel = viewModel
+        viewModel.checkUserExistence()
     }
 
     var body: some View {
         VStack {
             switch viewModel.viewState {
             case .exist:
-                Text("User alrready exists")
+                userExistView
             case .settingName:
                 enterNameView
             case .settingNotification:
                 enterNotifyBeforeDays
+            }
+        }
+    }
+
+    var userExistView: some View {
+        ZStack {
+            Color.background
+                .ignoresSafeArea()
+
+            VStack(spacing: 20) {
+                Text("Set up your first subscription!")
+                    .foregroundColor(.text)
+                    .font(.title)
+
+                CustomButton(label: "OK") {
+                    viewModel.registerUser()
+                }
             }
         }
     }
@@ -60,7 +78,6 @@ struct RegisterUserView: View {
                     .font(.title)
 
                 CustomTextField(placeholder: "Enter notify before days", text: $strNotifyBeforeDays, isNumeric: true)
-
                 CustomButton(label: "Next") {
                     viewModel.setNotifyBeforeDays(Int(strNotifyBeforeDays)!)
                 }

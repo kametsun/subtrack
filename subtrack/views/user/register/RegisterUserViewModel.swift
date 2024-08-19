@@ -27,7 +27,6 @@ class RegisterUserViewModel: ObservableObject {
 
     init(userRepository: UserRepository) {
         self.userRepository = userRepository
-        checkUserExistence()
     }
 
     func setName(_ name: String) {
@@ -59,7 +58,7 @@ class RegisterUserViewModel: ObservableObject {
         }
     }
 
-    private func checkUserExistence() {
+    func checkUserExistence() {
         do {
             if try userRepository.getUser() != nil {
                 self.viewState = .exist

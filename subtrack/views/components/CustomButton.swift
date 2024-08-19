@@ -15,6 +15,7 @@ struct CustomButton: View {
         Button(action: action) {
             Text(label)
                 .foregroundColor(.background)
+                .fontWeight(.bold)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
                 .background(.background)
