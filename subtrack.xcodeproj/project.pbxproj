@@ -19,6 +19,9 @@
 		A53F22F72C72F10100939FF9 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22F62C72F10100939FF9 /* UserRepository.swift */; };
 		A53F22F92C72F5C200939FF9 /* RegisterUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22F82C72F5C200939FF9 /* RegisterUserView.swift */; };
 		A53F22FC2C731C1D00939FF9 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22FB2C731C1D00939FF9 /* AppEnvironment.swift */; };
+		A53F23002C732A0A00939FF9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22FF2C732A0A00939FF9 /* Color.swift */; };
+		A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F23022C732A7E00939FF9 /* CustomTextField.swift */; };
+		A53F23052C732CEE00939FF9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F23042C732CEE00939FF9 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		A53F22F62C72F10100939FF9 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		A53F22F82C72F5C200939FF9 /* RegisterUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserView.swift; sourceTree = "<group>"; };
 		A53F22FB2C731C1D00939FF9 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		A53F22FF2C732A0A00939FF9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A53F23022C732A7E00939FF9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A53F23042C732CEE00939FF9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 				A53F22EB2C72E34600939FF9 /* ui */,
 				A5106D322C72315F00BB1066 /* models */,
 				A5106D222C722FD200BB1066 /* subtrackApp.swift */,
+				A53F22FF2C732A0A00939FF9 /* Color.swift */,
 				A5106D242C722FD200BB1066 /* ContentView.swift */,
 				A5106D282C722FD200BB1066 /* Assets.xcassets */,
 				A5106D2A2C722FD200BB1066 /* Preview Content */,
@@ -99,6 +106,7 @@
 		A53F22EB2C72E34600939FF9 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				A53F23012C732A6400939FF9 /* components */,
 				A53F22F12C72EF8100939FF9 /* user */,
 				A53F22F02C72E70B00939FF9 /* launch */,
 			);
@@ -145,6 +153,15 @@
 				A53F22FB2C731C1D00939FF9 /* AppEnvironment.swift */,
 			);
 			path = di;
+			sourceTree = "<group>";
+		};
+		A53F23012C732A6400939FF9 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				A53F23022C732A7E00939FF9 /* CustomTextField.swift */,
+				A53F23042C732CEE00939FF9 /* CustomButton.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,13 +234,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53F23052C732CEE00939FF9 /* CustomButton.swift in Sources */,
 				A5106D342C72317900BB1066 /* User.swift in Sources */,
 				A53F22EF2C72E51F00939FF9 /* LaunchView.swift in Sources */,
+				A53F23002C732A0A00939FF9 /* Color.swift in Sources */,
 				A53F22F42C72EFE500939FF9 /* RegisterUserViewModel.swift in Sources */,
 				A53F22F92C72F5C200939FF9 /* RegisterUserView.swift in Sources */,
 				A5106D252C722FD200BB1066 /* ContentView.swift in Sources */,
 				A53F22FC2C731C1D00939FF9 /* AppEnvironment.swift in Sources */,
 				A53F22E92C72D15600939FF9 /* Subscription.swift in Sources */,
+				A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */,
 				A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */,
 				A53F22F72C72F10100939FF9 /* UserRepository.swift in Sources */,
 				A5106D232C722FD200BB1066 /* subtrackApp.swift in Sources */,

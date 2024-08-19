@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 /**
  * ユーザ登録画面の状態を管理するViewModel
@@ -31,6 +32,7 @@ class RegisterUserViewModel: ObservableObject {
     
     func setName(name: String){
         self.name = name
+        viewState = .SETTING_NOTIFICATION
     }
     
     func setNotifyBeforeDays(day: Int){

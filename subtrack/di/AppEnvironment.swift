@@ -7,9 +7,11 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 class AppEnvironment: ObservableObject {
-    @Published var registerUserViewModel: RegisterUserViewModel
+    @Published
+    var registerUserViewModel: RegisterUserViewModel
     
     init(modelContext: ModelContext) {
         self.registerUserViewModel = RegisterUserViewModel(
