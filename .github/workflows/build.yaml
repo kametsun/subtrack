@@ -12,12 +12,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name ls 
+        run: ls
+
       - name: Archive Project
         run: |
           xcodebuild archive -project subtrack/subtrack.xcodeproj \
                              -scheme subtrackApp \
                              -sdk iphoneos \
                              -configuration Release \
-                             -archivePath MainApp.xcarchive \
+                             -archivePath subtrackApp.xcarchive \
                              CODE_SIGNING_ALLOWED=NO
 
