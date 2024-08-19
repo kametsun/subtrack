@@ -8,7 +8,6 @@
 import Foundation
 import SwiftData
 
-
 /**
  * ユーザ情報の元となるクラス
  */
@@ -28,8 +27,15 @@ final class User {
     /** サブスクリプション */
     @Relationship(deleteRule: .cascade)
     var subscriptions: [Subscription]
-    
-    init(id: String, name: String, notifyBeforeDays: Int, createdAt: Date, updatedAt: Date, subscriptions: [Subscription]) {
+
+    init(
+        id: String,
+        name: String,
+        notifyBeforeDays: Int,
+        createdAt: Date,
+        updatedAt: Date,
+        subscriptions: [Subscription]
+    ) {
         self.id = id
         self.name = name
         self.notifyBeforeDays = notifyBeforeDays

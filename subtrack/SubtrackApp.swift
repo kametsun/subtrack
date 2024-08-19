@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct subtrackApp: App {
+struct SubtrackApp: App {
     /**
      * 全体で共有されるModelContainerインスタンスの定義
      * 保存などの管理を行うコンテナ
@@ -18,7 +18,7 @@ struct subtrackApp: App {
         /** データモデルのスキーマ定義 */
         let schema = Schema([
             User.self,
-            Subscription.self,
+            Subscription.self
         ])
         /** 保存方法の定義 */
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
@@ -31,9 +31,17 @@ struct subtrackApp: App {
         }
     }()
 
+    @StateObject private var appEnvironment: AppEnvironment
+
+    init() {
+        let modelContext = sharedModelContainer.mainContext
+        _appEnvironment = StateObject(wrappedValue: AppEnvironment(modelContext: modelContext))
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appEnvironment)
         }
         .modelContainer(sharedModelContainer)
     }

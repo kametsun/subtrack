@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct LaunchView: View {
+    @EnvironmentObject var appEnvironment: AppEnvironment
     @StateObject private var viewMoel = LaunchViewModel()
-    
+
     var body: some View {
         if viewMoel.isActive {
-            HomeView()
+            RegisterUserView(viewModel: appEnvironment.registerUserViewModel)
         } else {
             VStack {
                 Text("Launch")
@@ -32,8 +33,4 @@ struct HomeView: View {
             .font(.largeTitle)
             .padding()
     }
-}
-
-#Preview {
-    LaunchView()
 }
