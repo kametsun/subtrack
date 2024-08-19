@@ -10,11 +10,9 @@ import SwiftUI
 struct CustomButton: View {
     var label: String
     var action: () -> Void
-    
+
     var body: some View {
-        Button(action: {
-            action()
-        }) {
+        Button(action: action) {
             Text(label)
                 .foregroundColor(.background)
                 .padding(.vertical, 10)

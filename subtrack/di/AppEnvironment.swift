@@ -12,7 +12,7 @@ import SwiftUI
 class AppEnvironment: ObservableObject {
     @Published
     var registerUserViewModel: RegisterUserViewModel
-    
+
     init(modelContext: ModelContext) {
         self.registerUserViewModel = RegisterUserViewModel(
             userRepository: UserRepository(modelContext: modelContext)

@@ -37,22 +37,34 @@ final class Subscription {
     /** ユーザ */
     @Relationship(inverse: \User.subscriptions)
     var user: User?
-    
+
     enum CycleType: String, Codable {
         /** 月契約 */
         case MONTH
         /** 年契約 */
         case YEAR
     }
-    
+
     enum StatusType: String, Codable {
         /** アクティブ */
         case ACTIVE
         /** キャンセル */
         case CANCELLED
     }
-    
-    init(id: String, userId: String, name: String, url: String, cycle: CycleType, price: Int, startDate: Date, status: StatusType, createdAt: Date, updatedAt: Date, user: User? = nil) {
+
+    init(
+        id: String,
+        userId: String,
+        name: String,
+        url: String,
+        cycle: CycleType,
+        price: Int,
+        startDate: Date,
+        status: StatusType,
+        createdAt: Date,
+        updatedAt: Date,
+        user: User? = nil
+    ) {
         self.id = id
         self.userId = userId
         self.name = name

@@ -10,7 +10,7 @@ import SwiftUI
 struct LaunchView: View {
     @EnvironmentObject var appEnvironment: AppEnvironment
     @StateObject private var viewMoel = LaunchViewModel()
-    
+
     var body: some View {
         if viewMoel.isActive {
             RegisterUserView(viewModel: appEnvironment.registerUserViewModel)

@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomTextField: View {
     var placeholder: String
     @Binding var text: String
-    
+
     var body: some View {
         VStack {
             TextField(placeholder, text: $text)

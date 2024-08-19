@@ -1,0 +1,43 @@
+--swiftversion 5
+--blankLinesAtStartOfScope 0　# スコープの開始時に空白行を許可しない
+--blankLinesAtEndOfScope 0　　# スコープの終了時に空白行を許可しない
+--blankLinesBetweenScopes true #class, struct, enum, extension, protocol, function の宣言の前に空白行を入れる。
+--braces same-line #波括弧を同じ行に配置します。
+--consecutiveBlankLines 1 #連続する空行の数を1つに制御します。
+--consecutiveSpaces 1 #コード内の連続するスペースの数を1つに制御
+--duplicateImports #コード内で重複してインポートされているモジュールやライブラリを削除します
+--elseOnSameLine true # else, catch, while キーワードのポジションを "同じ行" または "次の行" に調整する。
+--indent 2
+--isEmpty
+--leadingDelimiters #行の先頭に来るデリミタ（例えばカンマやセミコロン）を一貫したスタイルに変換するための機能
+--linebreakAtEndOfFile #ファイルの末尾に改行を追加する
+--modifierOrder #Swift コード内のアクセス修飾子やその他の修飾子の順序を統一するための機能 "public, open, private, fileprivate, internal, static, final, class, override, required, convenience, lazy, dynamic, weak, unowned, optional, indirect, mutating, nonmutating, throws, rethrows"の順番
+--numberFormatting #コード内の数値リテラルの形式を統一するための機能
+--redundantBackticks #不要なバックティック (`) をコードから削除するための機能
+--redundantBreak #不要な break ステートメントをコードから削除するための機能
+--redundantGet #不要な get キーワードを削除するため
+--redundantInit #明示的な初期化（init）が不要な場合にこれを削除
+--redundantLet #冗長な let キーワードを削除
+--redundantLetError #エラーハンドリングの際に冗長な let キーワードを削除
+--redundantNilInit #冗長な nil 初期化を削除
+--redundantObjc #不要な @objc 属性を削除する
+--redundantParens #不必要な括弧（カッコ）を削除するためのもの
+--redundantPattern #パターンマッチングにおいて冗長な部分を削除する
+--redundantRawValues #列挙型で不要な生の値（raw value）を削除する
+--redundantSelf #不要な self の使用を削除する
+--redundantVoidReturnType
+--semicolons #不要なセミコロン削除
+--spaceAroundBraces #ブレース（{ や }）の周囲にスペースを追加する
+--spaceAroundBrackets
+--spaceAroundComments
+--spaceAroundOperators
+--spaceInsideBraces
+--spaceInsideGenerics
+--strongOutlets
+--strongifiedSelf
+--todos
+--wraparguments beforefirst
+--wrapparameters beforefirst
+--allman false
+--patternlet inline
+

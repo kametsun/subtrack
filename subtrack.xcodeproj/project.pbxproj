@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5106D232C722FD200BB1066 /* subtrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5106D222C722FD200BB1066 /* subtrackApp.swift */; };
+		A5106D232C722FD200BB1066 /* SubtrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5106D222C722FD200BB1066 /* SubtrackApp.swift */; };
 		A5106D252C722FD200BB1066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5106D242C722FD200BB1066 /* ContentView.swift */; };
 		A5106D292C722FD200BB1066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5106D282C722FD200BB1066 /* Assets.xcassets */; };
 		A5106D2C2C722FD200BB1066 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5106D2B2C722FD200BB1066 /* Preview Assets.xcassets */; };
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		A5106D1F2C722FD200BB1066 /* subtrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = subtrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5106D222C722FD200BB1066 /* subtrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subtrackApp.swift; sourceTree = "<group>"; };
+		A5106D222C722FD200BB1066 /* SubtrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtrackApp.swift; sourceTree = "<group>"; };
 		A5106D242C722FD200BB1066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A5106D282C722FD200BB1066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5106D2B2C722FD200BB1066 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 				A53F22F52C72F0F400939FF9 /* repositories */,
 				A53F22EB2C72E34600939FF9 /* views */,
 				A5106D322C72315F00BB1066 /* models */,
-				A5106D222C722FD200BB1066 /* subtrackApp.swift */,
+				A5106D222C722FD200BB1066 /* SubtrackApp.swift */,
 				A53F22FF2C732A0A00939FF9 /* Color.swift */,
 				A5106D242C722FD200BB1066 /* ContentView.swift */,
 				A5106D282C722FD200BB1066 /* Assets.xcassets */,
@@ -174,6 +174,7 @@
 				A5106D1B2C722FD200BB1066 /* Sources */,
 				A5106D1C2C722FD200BB1066 /* Frameworks */,
 				A5106D1D2C722FD200BB1066 /* Resources */,
+				A5EBEB6F2C7378B0007F1D7A /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -229,6 +230,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A5EBEB6F2C7378B0007F1D7A /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5106D1B2C722FD200BB1066 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -246,7 +269,7 @@
 				A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */,
 				A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */,
 				A53F22F72C72F10100939FF9 /* UserRepository.swift in Sources */,
-				A5106D232C722FD200BB1066 /* subtrackApp.swift in Sources */,
+				A5106D232C722FD200BB1066 /* SubtrackApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +404,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"subtrack/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -409,6 +433,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"subtrack/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

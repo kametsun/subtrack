@@ -13,33 +13,33 @@ import Combine
  */
 class RegisterUserViewModel: ObservableObject {
     enum ViewState: String, Codable {
-        case EXISTS
-        case SETTING_NAME
-        case SETTING_NOTIFICATION
+        case exist
+        case settingName
+        case settingNotification
     }
-    
+
     @Published var errorMessage = ""
-    @Published var viewState: ViewState = .SETTING_NAME
-    
+    @Published var viewState: ViewState = .settingName
+
     private var userRepository: UserRepository
     private var name = ""
     private var notifyBeforeDays = 0
-    
+
     init(userRepository: UserRepository) {
         self.userRepository = userRepository
         checkUserExistence()
     }
-    
-    func setName(_ name: String){
+
+    func setName(_ name: String) {
         self.name = name
-        viewState = .SETTING_NOTIFICATION
+        viewState = .settingNotification
     }
-    
-    func setNotifyBeforeDays(day: Int){
+
+    func setNotifyBeforeDays(day: Int) {
         self.notifyBeforeDays = day
     }
-    
-    func registerUser(){
+
+    func registerUser() {
         do {
             let id = "user_" + UUID().uuidString
             let user = User(
@@ -57,17 +57,17 @@ class RegisterUserViewModel: ObservableObject {
             errorMessage = "Failed to create user"
         }
     }
-    
+
     private func checkUserExistence() {
         do {
-            if let _ = try userRepository.getUser() {
-                self.viewState = .EXISTS
+            if try userRepository.getUser() != nil {
+                self.viewState = .exist
             } else {
-                self.viewState = .SETTING_NAME
+                self.viewState = .settingName
             }
         } catch {
             errorMessage = "failed"
-            self.viewState = .SETTING_NAME
+            self.viewState = .settingName
         }
     }
 }
