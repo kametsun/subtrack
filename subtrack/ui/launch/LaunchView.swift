@@ -12,7 +12,7 @@ struct LaunchView: View {
     
     var body: some View {
         if viewMoel.isActive {
-            HomeView()
+            RegisterUserView()
         } else {
             VStack {
                 Text("Launch")

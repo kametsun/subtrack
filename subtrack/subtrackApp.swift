@@ -30,10 +30,18 @@ struct subtrackApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    @StateObject private var appEnvironment: AppEnvironment
+    
+    init() {
+        let modelContext = sharedModelContainer.mainContext
+        _appEnvironment = StateObject(wrappedValue: AppEnvironment(modelContext: modelContext))
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appEnvironment)
         }
         .modelContainer(sharedModelContainer)
     }
