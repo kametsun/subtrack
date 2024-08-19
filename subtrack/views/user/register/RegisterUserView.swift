@@ -9,26 +9,28 @@ import SwiftUI
 import SwiftData
 
 struct RegisterUserView: View {
-    @EnvironmentObject var appEnvironment: AppEnvironment
+    @ObservedObject var viewModel: RegisterUserViewModel
+    @State var name: String = ""
+    
+    init(viewModel: RegisterUserViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
+        Text("ステート: \(viewModel.viewState)")
         VStack {
-            switch appEnvironment.registerUserViewModel.viewState {
+            switch viewModel.viewState {
             case .EXISTS:
                 Text("User alrready exists")
             case .SETTING_NAME:
-                EnterNameView(viewModel: appEnvironment.registerUserViewModel)
+                enterNameView
             case .SETTING_NOTIFICATION:
                 Text("Set up your notification preferences")
             }
         }
     }
-}
-
-struct EnterNameView: View {
-    @ObservedObject var viewModel: RegisterUserViewModel
-    @State private var name = ""
     
-    var body: some View {
+    var enterNameView: some View {
         ZStack {
             Color.background
                 .ignoresSafeArea()
@@ -41,7 +43,7 @@ struct EnterNameView: View {
                 CustomTextField(placeholder: "Enter your name", text: $name)
                 
                 CustomButton(label: "Next"){
-                    viewModel.setName(name: name)
+                    viewModel.setName(name)
                 }
             }
         }

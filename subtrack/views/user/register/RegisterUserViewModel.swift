@@ -30,7 +30,7 @@ class RegisterUserViewModel: ObservableObject {
         checkUserExistence()
     }
     
-    func setName(name: String){
+    func setName(_ name: String){
         self.name = name
         viewState = .SETTING_NOTIFICATION
     }
