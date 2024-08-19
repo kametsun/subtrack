@@ -10,7 +10,8 @@ import SwiftData
 
 struct RegisterUserView: View {
     @ObservedObject var viewModel: RegisterUserViewModel
-    @State var name: String = ""
+    @State var name = ""
+    @State var strNotifyBeforeDays = ""
 
     init(viewModel: RegisterUserViewModel) {
         self.viewModel = viewModel
@@ -24,7 +25,7 @@ struct RegisterUserView: View {
             case .settingName:
                 enterNameView
             case .settingNotification:
-                Text("Set up your notification preferences")
+                enterNotifyBeforeDays
             }
         }
     }
@@ -45,6 +46,39 @@ struct RegisterUserView: View {
                     viewModel.setName(name)
                 }
             }
+        }
+    }
+
+    var enterNotifyBeforeDays: some View {
+        ZStack {
+            Color.background
+                .ignoresSafeArea()
+
+            VStack(spacing: 20) {
+                Text("How many days' notice do you want?")
+                    .foregroundColor(.text)
+                    .font(.title)
+
+                CustomTextField(placeholder: "Enter notify before days", text: $strNotifyBeforeDays, isNumeric: true)
+
+                CustomButton(label: "Next") {
+                    viewModel.setNotifyBeforeDays(Int(strNotifyBeforeDays)!)
+                }
+            }
+        }
+    }
+
+    private func validateAndProceed() {
+        guard let days = Int(strNotifyBeforeDays) else {
+            viewModel.errorMessage = "Please enter number"
+            return
+        }
+
+        if days < 1 || days > 7 {
+            viewModel.errorMessage = "Please enter 1~7"
+        } else {
+            viewModel.errorMessage = ""
+            viewModel.setNotifyBeforeDays(days)
         }
     }
 }

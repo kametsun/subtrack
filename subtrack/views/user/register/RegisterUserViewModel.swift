@@ -35,8 +35,9 @@ class RegisterUserViewModel: ObservableObject {
         viewState = .settingNotification
     }
 
-    func setNotifyBeforeDays(day: Int) {
+    func setNotifyBeforeDays(_ day: Int) {
         self.notifyBeforeDays = day
+        viewState = .exist
     }
 
     func registerUser() {
