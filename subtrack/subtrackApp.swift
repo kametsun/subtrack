@@ -13,6 +13,7 @@ struct subtrackApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             User.self,
+            Subscription.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

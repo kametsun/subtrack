@@ -46,7 +46,8 @@ struct ContentView: View {
                 name: "test_user",
                 notifyBeforeDays: 1,
                 createdAt: Date(),
-                updatedAt: Date()
+                updatedAt: Date(),
+                subscriptions: [Subscription]()
             )
             modelContext.insert(newItem)
         }
