@@ -74,8 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				A53F22FA2C731BFF00939FF9 /* di */,
-				A53F22F52C72F0F400939FF9 /* repository */,
-				A53F22EB2C72E34600939FF9 /* ui */,
+				A53F22F52C72F0F400939FF9 /* repositories */,
+				A53F22EB2C72E34600939FF9 /* views */,
 				A5106D322C72315F00BB1066 /* models */,
 				A5106D222C722FD200BB1066 /* subtrackApp.swift */,
 				A53F22FF2C732A0A00939FF9 /* Color.swift */,
@@ -103,14 +103,14 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		A53F22EB2C72E34600939FF9 /* ui */ = {
+		A53F22EB2C72E34600939FF9 /* views */ = {
 			isa = PBXGroup;
 			children = (
 				A53F23012C732A6400939FF9 /* components */,
 				A53F22F12C72EF8100939FF9 /* user */,
 				A53F22F02C72E70B00939FF9 /* launch */,
 			);
-			path = ui;
+			path = views;
 			sourceTree = "<group>";
 		};
 		A53F22F02C72E70B00939FF9 /* launch */ = {
@@ -139,12 +139,12 @@
 			path = register;
 			sourceTree = "<group>";
 		};
-		A53F22F52C72F0F400939FF9 /* repository */ = {
+		A53F22F52C72F0F400939FF9 /* repositories */ = {
 			isa = PBXGroup;
 			children = (
 				A53F22F62C72F10100939FF9 /* UserRepository.swift */,
 			);
-			path = repository;
+			path = repositories;
 			sourceTree = "<group>";
 		};
 		A53F22FA2C731BFF00939FF9 /* di */ = {
