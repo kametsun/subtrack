@@ -14,6 +14,7 @@
 		A5106D342C72317900BB1066 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5106D332C72317900BB1066 /* User.swift */; };
 		A52BE43E2C742B7D0010D3D5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */; };
 		A52BE4402C742B8A0010D3D5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE43F2C742B8A0010D3D5 /* HomeView.swift */; };
+		A52BE4422C7436160010D3D5 /* SubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE4412C7436160010D3D5 /* SubscriptionRepository.swift */; };
 		A53F22E92C72D15600939FF9 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22E82C72D15600939FF9 /* Subscription.swift */; };
 		A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22EC2C72E35C00939FF9 /* LaunchViewModel.swift */; };
 		A53F22EF2C72E51F00939FF9 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22EE2C72E51F00939FF9 /* LaunchView.swift */; };
@@ -24,6 +25,8 @@
 		A53F23002C732A0A00939FF9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22FF2C732A0A00939FF9 /* Color.swift */; };
 		A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F23022C732A7E00939FF9 /* CustomTextField.swift */; };
 		A53F23052C732CEE00939FF9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F23042C732CEE00939FF9 /* CustomButton.swift */; };
+		A5E6288B2C74A18400BEBD2C /* RegisterSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288A2C74A18400BEBD2C /* RegisterSubscriptionView.swift */; };
+		A5E6288D2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288C2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,7 @@
 		A5106D332C72317900BB1066 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A52BE43F2C742B8A0010D3D5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A52BE4412C7436160010D3D5 /* SubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRepository.swift; sourceTree = "<group>"; };
 		A53F22E82C72D15600939FF9 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		A53F22EC2C72E35C00939FF9 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		A53F22EE2C72E51F00939FF9 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 		A53F22FF2C732A0A00939FF9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A53F23022C732A7E00939FF9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A53F23042C732CEE00939FF9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		A5E6288A2C74A18400BEBD2C /* RegisterSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSubscriptionView.swift; sourceTree = "<group>"; };
+		A5E6288C2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSubscriptionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		A53F22EB2C72E34600939FF9 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				A5E628882C74A16300BEBD2C /* subscription */,
 				A52BE43C2C742B6B0010D3D5 /* home */,
 				A53F23012C732A6400939FF9 /* components */,
 				A53F22F12C72EF8100939FF9 /* user */,
@@ -157,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				A53F22F62C72F10100939FF9 /* UserRepository.swift */,
+				A52BE4412C7436160010D3D5 /* SubscriptionRepository.swift */,
 			);
 			path = repositories;
 			sourceTree = "<group>";
@@ -176,6 +184,23 @@
 				A53F23042C732CEE00939FF9 /* CustomButton.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		A5E628882C74A16300BEBD2C /* subscription */ = {
+			isa = PBXGroup;
+			children = (
+				A5E628892C74A17000BEBD2C /* register */,
+			);
+			path = subscription;
+			sourceTree = "<group>";
+		};
+		A5E628892C74A17000BEBD2C /* register */ = {
+			isa = PBXGroup;
+			children = (
+				A5E6288A2C74A18400BEBD2C /* RegisterSubscriptionView.swift */,
+				A5E6288C2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift */,
+			);
+			path = register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,9 +308,12 @@
 				A53F22E92C72D15600939FF9 /* Subscription.swift in Sources */,
 				A52BE43E2C742B7D0010D3D5 /* HomeViewModel.swift in Sources */,
 				A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */,
+				A5E6288D2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift in Sources */,
+				A52BE4422C7436160010D3D5 /* SubscriptionRepository.swift in Sources */,
 				A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */,
 				A53F22F72C72F10100939FF9 /* UserRepository.swift in Sources */,
 				A5106D232C722FD200BB1066 /* SubtrackApp.swift in Sources */,
+				A5E6288B2C74A18400BEBD2C /* RegisterSubscriptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

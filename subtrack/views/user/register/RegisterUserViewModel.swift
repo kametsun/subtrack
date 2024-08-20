@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 /**
  * ユーザ登録画面の状態を管理するViewModel

@@ -19,7 +19,9 @@ struct LaunchView: View {
                     viewModel: appEnvironment.registerUserViewModel
                 )
             case .home:
-                HomeView()
+                HomeView(
+                    viewModel: appEnvironment.homeViewModel
+                )
             }
         } else {
             VStack {

@@ -10,12 +10,22 @@ import SwiftData
 import SwiftUI
 
 class AppEnvironment: ObservableObject {
-    @Published
-    var registerUserViewModel: RegisterUserViewModel
+    @Published var registerUserViewModel: RegisterUserViewModel
+    @Published var homeViewModel: HomeViewModel
+    @Published var registerSubscriptionViewModel: RegisterSubscriptionViewModel
 
     init(modelContext: ModelContext) {
+        let userRepository = UserRepository(modelContext: modelContext)
+        let subscriptionRepository = SubscriptionRepository(modelContext: modelContext)
+
         self.registerUserViewModel = RegisterUserViewModel(
-            userRepository: UserRepository(modelContext: modelContext)
+            userRepository: userRepository
+        )
+        self.homeViewModel = HomeViewModel(
+            subscriptionRepository: subscriptionRepository
+        )
+        self.registerSubscriptionViewModel = RegisterSubscriptionViewModel(
+            subscriptionRepository: subscriptionRepository
         )
     }
 }

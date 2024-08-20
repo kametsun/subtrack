@@ -61,8 +61,6 @@ final class Subscription {
         price: Int,
         startDate: Date,
         status: StatusType,
-        createdAt: Date,
-        updatedAt: Date,
         user: User? = nil
     ) {
         self.id = id
@@ -73,8 +71,8 @@ final class Subscription {
         self.price = price
         self.startDate = startDate
         self.status = status
-        self.createdAt = createdAt
-        self.updatedAt = updatedAt
+        self.createdAt = Date()
+        self.updatedAt = Date()
         self.user = user
     }
 }

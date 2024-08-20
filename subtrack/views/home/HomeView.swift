@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct HomeView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @EnvironmentObject var appEnvironment: AppEnvironment
+    @ObservedObject var viewModel: HomeViewModel
 
-#Preview {
-    HomeView()
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+    }
+
+    var body: some View {
+        ZStack {
+            Color.background
+                .ignoresSafeArea()
+
+            if viewModel.subscriptions.isEmpty {
+                NavigationLink(destination: RegisterSubscriptionView(viewModel: appEnvironment.registerSubscriptionViewModel)) {
+                    Text("Add Subscriptions")
+                }
+            } else {
+                List(viewModel.subscriptions) { subscription in
+                    VStack(alignment: .leading) {
+                        Text(subscription.name)
+                            .font(.headline)
+                        Text(subscription.url)
+                            .font(.headline)
+                    }
+                }
+            }
+        }
+        .onAppear {
+            viewModel.getSubscriptions()
+        }
+    }
 }

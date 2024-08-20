@@ -13,19 +13,15 @@ class LaunchViewModel: ObservableObject {
         case home
     }
 
-    @Published var isActive = false
+    @Published var isActive: Bool = false
     @Published var viewState: ViewState = .registerUser
 
     func startLaunchProcess() {
+        let state: ViewState = UserDefaults.standard.string(forKey: "userId") != nil ? .home : .registerUser
         Task {
-            if UserDefaults.standard.string(forKey: "userId") != nil {
-                self.viewState = .home
-            } else {
-                self.viewState = .registerUser
-            }
-
             try await Task.sleep(nanoseconds: 1_000_000_000)
             DispatchQueue.main.async {
+                self.viewState = state
                 self.isActive = true
             }
         }
