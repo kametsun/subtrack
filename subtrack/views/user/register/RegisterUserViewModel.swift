@@ -51,6 +51,7 @@ class RegisterUserViewModel: ObservableObject {
                 subscriptions: [Subscription]()
             )
             try userRepository.registerUser(user: user)
+            UserDefaults.standard.set(id, forKey: "userId")
             name = ""
             notifyBeforeDays = 0
         } catch {

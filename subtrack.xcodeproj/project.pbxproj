@@ -12,6 +12,8 @@
 		A5106D292C722FD200BB1066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5106D282C722FD200BB1066 /* Assets.xcassets */; };
 		A5106D2C2C722FD200BB1066 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5106D2B2C722FD200BB1066 /* Preview Assets.xcassets */; };
 		A5106D342C72317900BB1066 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5106D332C72317900BB1066 /* User.swift */; };
+		A52BE43E2C742B7D0010D3D5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */; };
+		A52BE4402C742B8A0010D3D5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE43F2C742B8A0010D3D5 /* HomeView.swift */; };
 		A53F22E92C72D15600939FF9 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22E82C72D15600939FF9 /* Subscription.swift */; };
 		A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22EC2C72E35C00939FF9 /* LaunchViewModel.swift */; };
 		A53F22EF2C72E51F00939FF9 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22EE2C72E51F00939FF9 /* LaunchView.swift */; };
@@ -31,6 +33,8 @@
 		A5106D282C722FD200BB1066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5106D2B2C722FD200BB1066 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5106D332C72317900BB1066 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A52BE43F2C742B8A0010D3D5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A53F22E82C72D15600939FF9 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		A53F22EC2C72E35C00939FF9 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		A53F22EE2C72E51F00939FF9 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -103,9 +107,19 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		A52BE43C2C742B6B0010D3D5 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */,
+				A52BE43F2C742B8A0010D3D5 /* HomeView.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
 		A53F22EB2C72E34600939FF9 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				A52BE43C2C742B6B0010D3D5 /* home */,
 				A53F23012C732A6400939FF9 /* components */,
 				A53F22F12C72EF8100939FF9 /* user */,
 				A53F22F02C72E70B00939FF9 /* launch */,
@@ -260,12 +274,14 @@
 				A53F23052C732CEE00939FF9 /* CustomButton.swift in Sources */,
 				A5106D342C72317900BB1066 /* User.swift in Sources */,
 				A53F22EF2C72E51F00939FF9 /* LaunchView.swift in Sources */,
+				A52BE4402C742B8A0010D3D5 /* HomeView.swift in Sources */,
 				A53F23002C732A0A00939FF9 /* Color.swift in Sources */,
 				A53F22F42C72EFE500939FF9 /* RegisterUserViewModel.swift in Sources */,
 				A53F22F92C72F5C200939FF9 /* RegisterUserView.swift in Sources */,
 				A5106D252C722FD200BB1066 /* ContentView.swift in Sources */,
 				A53F22FC2C731C1D00939FF9 /* AppEnvironment.swift in Sources */,
 				A53F22E92C72D15600939FF9 /* Subscription.swift in Sources */,
+				A52BE43E2C742B7D0010D3D5 /* HomeViewModel.swift in Sources */,
 				A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */,
 				A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */,
 				A53F22F72C72F10100939FF9 /* UserRepository.swift in Sources */,

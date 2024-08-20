@@ -8,11 +8,22 @@
 import Foundation
 
 class LaunchViewModel: ObservableObject {
-    @Published
-    var isActive = false
+    enum ViewState: String, Codable {
+        case registerUser
+        case home
+    }
+
+    @Published var isActive = false
+    @Published var viewState: ViewState = .registerUser
 
     func startLaunchProcess() {
         Task {
+            if UserDefaults.standard.string(forKey: "userId") != nil {
+                self.viewState = .home
+            } else {
+                self.viewState = .registerUser
+            }
+
             try await Task.sleep(nanoseconds: 1_000_000_000)
             DispatchQueue.main.async {
                 self.isActive = true
