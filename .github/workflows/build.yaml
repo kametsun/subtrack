@@ -16,6 +16,15 @@ jobs:
         run: |
           brew install swiftlint
 
+      - name: Run SwiftLint
+        run: |
+          export PATH="$PATH:/opt/homebrew/bin"
+          if which swiftlint > /dev/null; then
+            swiftlint
+          else
+            echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+          fi
+
       - name: Archive Project
         run: |
           xcodebuild archive -project subtrack.xcodeproj \
