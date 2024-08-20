@@ -12,6 +12,7 @@ import Foundation
  */
 class RegisterSubscriptionViewModel: ObservableObject {
     private var subscriptionRepository: SubscriptionRepository
+    @Published var name: String = ""
 
     init(subscriptionRepository: SubscriptionRepository) {
         self.subscriptionRepository = subscriptionRepository

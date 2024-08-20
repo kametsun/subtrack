@@ -21,7 +21,9 @@ struct HomeView: View {
                 .ignoresSafeArea()
 
             if viewModel.subscriptions.isEmpty {
-                NavigationLink(destination: RegisterSubscriptionView(viewModel: appEnvironment.registerSubscriptionViewModel)) {
+                NavigationLink(
+                    destination: RegisterSubscriptionView(viewModel: appEnvironment.registerSubscriptionViewModel)
+                ) {
                     Text("Add Subscriptions")
                 }
             } else {
