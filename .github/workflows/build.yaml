@@ -20,12 +20,14 @@ jobs:
         run: |
           export PATH="$PATH:/opt/homebrew/bin"
           if which swiftlint > /dev/null; then
-            swiftlint
+            swiftlint > swiftlint_results.txt
+            grep -q "warning:" swiftlint_results.txt && exit 1 || exit 0
           else
             echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
           fi
 
       - name: Archive Project
+        if: success()
         run: |
           xcodebuild archive -project subtrack.xcodeproj \
                              -scheme subtrack \
