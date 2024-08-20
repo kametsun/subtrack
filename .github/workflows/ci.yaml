@@ -1,11 +1,11 @@
-name: Build
+name: CI
 
 on:
   push
 
 jobs:
   build:
-    name: build test
+    name: CI
     runs-on: macos-latest
 
     steps:
