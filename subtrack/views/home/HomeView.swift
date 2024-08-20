@@ -14,7 +14,7 @@ struct HomeView: View {
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
     }
-
+    
     var body: some View {
         ZStack {
             Color.background
