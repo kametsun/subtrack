@@ -31,10 +31,13 @@ struct HomeView: View {
                     VStack(alignment: .leading) {
                         Text(subscription.name)
                             .font(.headline)
+                            .foregroundColor(.white)
                         Text(subscription.url)
                             .font(.headline)
                     }
+                    .listRowBackground(Color.darkGray)
                 }
+                .scrollContentBackground(.hidden)
             }
         }
         .onAppear {

@@ -16,14 +16,17 @@ class HomeViewModel: ObservableObject {
 
     init(subscriptionRepository: SubscriptionRepository) {
         self.subscriptionRepository = subscriptionRepository
+        getSubscriptions()
     }
 
     func getSubscriptions() {
         DispatchQueue.main.async {
-            self.subscriptions = self.subscriptionRepository.getSubscriptions(
-                for: UserDefaults.standard.string(forKey: "userId")!
-            )
-            print(self.subscriptions)
+            let userId = UserDefaults.standard.string(forKey: "userId")
+            if userId != nil {
+                self.subscriptions = self.subscriptionRepository.getSubscriptions(
+                    for: userId!
+                )
+            }
         }
     }
 }

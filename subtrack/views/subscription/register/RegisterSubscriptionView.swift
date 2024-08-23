@@ -48,32 +48,32 @@ struct RegisterSubscriptionView: View {
                 Section {
                     List {
                         ListRow(
-                            value: name,
+                            value: $name,
                             title: "Name",
                             placeholder: "Enter name"
                         )
                         ListRow(
-                            value: cycle,
+                            value: $cycle,
                             title: "Cycle",
                             placeholder: cycle.rawValue
                         )
                         ListRow(
-                            value: price,
+                            value: $price,
                             title: "Price",
                             placeholder: "Enter price"
                         )
                         ListRow(
-                            value: url,
+                            value: $url,
                             title: "URL",
                             placeholder: "Enter url"
                         )
                         ListRow(
-                            value: startDate,
+                            value: $startDate,
                             title: "Start Date",
                             placeholder: formatDate(startDate)
                         )
                         ListRow(
-                            value: status,
+                            value: $status,
                             title: "Status",
                             placeholder: status.rawValue
                         )
@@ -100,7 +100,7 @@ struct RegisterSubscriptionView: View {
 }
 
 struct ListRow<T: Equatable & Hashable>: View {
-    @State var value: T
+    @Binding var value: T
     var title: String
     var placeholder: String
 
