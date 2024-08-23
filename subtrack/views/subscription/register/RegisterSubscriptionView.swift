@@ -13,6 +13,7 @@ struct RegisterSubscriptionView: View {
     @State var cycle: Subscription.CycleType = .MONTH
     @State var price: Int = 0
     @State var url: String = ""
+    @State var startDate: Date = Date()
 
     init(viewModel: RegisterSubscriptionViewModel) {
         self.viewModel = viewModel
@@ -45,6 +46,11 @@ struct RegisterSubscriptionView: View {
                             value: url,
                             title: "URL",
                             placeholder: "Enter url"
+                        )
+                        ListRow(
+                            value: startDate,
+                            title: "Start Date",
+                            placeholder: formatDate(startDate)
                         )
                     }
                     .listRowBackground(Color.darkGray)
@@ -81,6 +87,9 @@ struct ListRow<T: Equatable & Hashable>: View {
                         .foregroundColor(.white)
                 } else if let intValue = value as? Int {
                     Text(String(intValue))
+                        .foregroundColor(.white)
+                } else if let dateValue = value as? Date {
+                    Text(formatDate(dateValue))
                         .foregroundColor(.white)
                 }
             }
@@ -143,6 +152,24 @@ struct EditView<T: Equatable & Hashable>: View {
                             .stroke(.clear, lineWidth: 0)
                     }
                     Spacer()
+                } else if value is Date {
+                    DatePicker(title, selection: Binding(
+                        get: {
+                            if let dateValue = value as? Date {
+                                return dateValue
+                            } else {
+                                return Date()
+                            }
+                        }, set: { newDate in
+                            if let typedValue = newDate as? T {
+                                value = typedValue
+                            }
+                        }
+                    ), displayedComponents: .date)
+                    .datePickerStyle(GraphicalDatePickerStyle())
+                    .accentColor(.white)
+                    .colorScheme(.dark)
+                    .padding()
                 }
             }
             .padding()
