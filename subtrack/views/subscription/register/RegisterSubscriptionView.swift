@@ -11,11 +11,10 @@ struct RegisterSubscriptionView: View {
     @ObservedObject var viewModel: RegisterSubscriptionViewModel
     @State var name: String = ""
     @State var cycle: Subscription.CycleType = .MONTH
+    @State var price: Int = 0
 
     init(viewModel: RegisterSubscriptionViewModel) {
         self.viewModel = viewModel
-        name = viewModel.name
-        cycle = viewModel.cycle
     }
 
     var body: some View {
@@ -29,14 +28,17 @@ struct RegisterSubscriptionView: View {
                         ListRow(
                             value: name,
                             title: "Name",
-                            placeholder: "Enter name",
-                            onSelect: viewModel.setName
+                            placeholder: "Enter name"
                         )
                         ListRow(
                             value: cycle,
                             title: "Cycle",
-                            placeholder: viewModel.cycle.rawValue,
-                            onSelect: viewModel.setCycle
+                            placeholder: cycle.rawValue
+                        )
+                        ListRow(
+                            value: price,
+                            title: "Price",
+                            placeholder: "Enter price"
                         )
                     }
                     .listRowBackground(Color.darkGray)
@@ -45,7 +47,7 @@ struct RegisterSubscriptionView: View {
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text(viewModel.name.isEmpty ? "Register subscription" : viewModel.name)
+                Text(name.isEmpty ? "Register subscription" : name)
                     .foregroundStyle(.white)
                     .fontWeight(.bold)
             }
@@ -58,7 +60,6 @@ struct ListRow<T: Equatable & Hashable>: View {
     @State var value: T
     var title: String
     var placeholder: String
-    var onSelect: (T) -> Void
 
     var body: some View {
         NavigationLink(destination: EditView(value: $value, title: title)) {
@@ -71,6 +72,9 @@ struct ListRow<T: Equatable & Hashable>: View {
                         .foregroundColor(.white)
                 } else if let stringValue = value as? String {
                     Text(stringValue.isEmpty ? placeholder : stringValue)
+                        .foregroundColor(.white)
+                } else if let intValue = value as? Int {
+                    Text(String(intValue))
                         .foregroundColor(.white)
                 }
             }
@@ -114,6 +118,24 @@ struct EditView<T: Equatable & Hashable>: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(.clear, lineWidth: 0)
                     )
+                    Spacer()
+                } else if value is Int {
+                    TextField(title, text: Binding(
+                        get: {"\(value as? Int ?? 0)"},
+                        set: { newValue in
+                            if let intValue = Int(newValue), let typedValue = intValue as? T {
+                                value = typedValue
+                            }
+                        }
+                    ))
+                    .keyboardType(.numberPad)
+                    .padding()
+                    .background(.white)
+                    .cornerRadius(10)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.clear, lineWidth: 0)
+                    }
                     Spacer()
                 }
             }
