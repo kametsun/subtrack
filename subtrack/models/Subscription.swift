@@ -50,11 +50,16 @@ final class Subscription {
         }
     }
 
-    enum StatusType: String, Codable {
+    enum StatusType: String, Codable, CaseIterable, CustomStringConvertible {
+        var id: String { self.rawValue }
         /** アクティブ */
         case ACTIVE
         /** キャンセル */
         case CANCELLED
+        
+        var description: String {
+            return self.rawValue
+        }
     }
 
     init(

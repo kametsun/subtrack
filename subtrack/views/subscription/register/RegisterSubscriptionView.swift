@@ -14,6 +14,7 @@ struct RegisterSubscriptionView: View {
     @State var price: Int = 0
     @State var url: String = ""
     @State var startDate: Date = Date()
+    @State var status: Subscription.StatusType = .ACTIVE
 
     init(viewModel: RegisterSubscriptionViewModel) {
         self.viewModel = viewModel
@@ -52,6 +53,11 @@ struct RegisterSubscriptionView: View {
                             title: "Start Date",
                             placeholder: formatDate(startDate)
                         )
+                        ListRow(
+                            value: status,
+                            title: "Status",
+                            placeholder: status.rawValue
+                        )
                     }
                     .listRowBackground(Color.darkGray)
                 }
@@ -81,6 +87,9 @@ struct ListRow<T: Equatable & Hashable>: View {
                 Spacer()
                 if let cycleType = value as? Subscription.CycleType {
                     Text(cycleType.rawValue)
+                        .foregroundColor(.white)
+                } else if let statusType = value as? Subscription.StatusType {
+                    Text(statusType.rawValue)
                         .foregroundColor(.white)
                 } else if let stringValue = value as? String {
                     Text(stringValue.isEmpty ? placeholder : stringValue)
@@ -112,6 +121,16 @@ struct EditView<T: Equatable & Hashable>: View {
                         ForEach(Subscription.CycleType.allCases, id: \.self) { cycle in
                             Text(cycle.rawValue)
                                 .tag(cycle)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .padding()
+                } else if value as? Subscription.StatusType != nil {
+                    Picker(title, selection: $value) {
+                        ForEach(Subscription.StatusType.allCases, id: \.self) { status in
+                            Text(status.rawValue)
+                                .tag(status)
                                 .foregroundColor(.white)
                         }
                     }
