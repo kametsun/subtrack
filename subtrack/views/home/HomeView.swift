@@ -27,17 +27,17 @@ struct HomeView: View {
                     Text("Add Subscriptions")
                 }
             } else {
-                List(viewModel.subscriptions) { subscription in
-                    VStack(alignment: .leading) {
-                        Text(subscription.name)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                        Text(subscription.url)
-                            .font(.headline)
+                VStack {
+                    List(viewModel.subscriptions) { subscription in
+                        Section(header: Text("Subscriptions").foregroundColor(.white)) {
+                            Text(subscription.name)
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .listRowBackground(Color.darkGray)
+                        }
                     }
-                    .listRowBackground(Color.darkGray)
+                    .scrollContentBackground(.hidden)
                 }
-                .scrollContentBackground(.hidden)
             }
         }
         .onAppear {
