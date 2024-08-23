@@ -51,6 +51,16 @@ struct HomeView: View {
                     }
                     .scrollContentBackground(.hidden)
                 }
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("SubTrack")
+                            .foregroundStyle(.white)
+                            .fontWeight(.bold)
+                    }
+                }
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarBackground(.black, for: .navigationBar)
+                .navigationBarTitleDisplayMode(.inline)
             }
         }
         .onAppear {
@@ -71,6 +81,7 @@ struct HomeViewPreview: PreviewProvider {
         let viewModel = HomeViewModel(
             subscriptionRepository: subscriptionRepository
         )
+        createPreviewData(modelContext: modelContainer.mainContext)
 
         return HomeView(viewModel: viewModel)
             .environmentObject(appEnvironment)

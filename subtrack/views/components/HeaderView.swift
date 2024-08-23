@@ -12,9 +12,10 @@ struct HeaderView: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.largeTitle)
+                .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
         }
         .padding()
         .background(.black)

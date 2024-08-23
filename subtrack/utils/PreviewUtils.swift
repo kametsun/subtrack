@@ -28,3 +28,19 @@ func getSharedModelContainerPreview() -> ModelContainer {
 
     return sharedModelContainerPreview
 }
+
+func createPreviewData(modelContext: ModelContext) {
+    let userRepository = UserRepository(modelContext: modelContext)
+    let subscriptionRepository = SubscriptionRepository(modelContext: modelContext)
+    do {
+        try userRepository.registerUser(
+            user: User(id: "user_1", name: "test", notifyBeforeDays: 1, createdAt: Date(), updatedAt: Date(), subscriptions: [])
+        )
+        try subscriptionRepository.registerSubscription(
+            Subscription(id: "subscription_1", userId: "user_1", name: "Apple Music", url: "", cycle: .MONTH, price: 980, startDate: Date(), status: .ACTIVE)
+        )
+    } catch {
+        print("failed create test data")
+    }
+
+}
