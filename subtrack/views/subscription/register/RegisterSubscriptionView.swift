@@ -19,6 +19,19 @@ struct RegisterSubscriptionView: View {
     init(viewModel: RegisterSubscriptionViewModel) {
         self.viewModel = viewModel
     }
+    
+    private func onAddClick() {
+        let userId = UserDefaults.standard.string(forKey: "userId")
+        viewModel.registerSubscription(
+            userId: userId!,
+            name: name,
+            cycle: cycle,
+            price: price,
+            url: url,
+            statDate: startDate,
+            status: status
+        )
+    }
 
     var body: some View {
         ZStack {
@@ -68,6 +81,12 @@ struct RegisterSubscriptionView: View {
                 Text(name.isEmpty ? "Register subscription" : name)
                     .foregroundStyle(.white)
                     .fontWeight(.bold)
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: onAddClick) {
+                    Text("Add")
+                        .foregroundColor(.white)
+                }
             }
         }
         .navigationBarBackButtonHidden(true)

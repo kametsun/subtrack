@@ -26,4 +26,9 @@ class SubscriptionRepository {
             return []
         }
     }
+    
+    func registerSubscription(_ subscription: Subscription) throws {
+        modelContext.insert(subscription)
+        try modelContext.save()
+    }
 }
