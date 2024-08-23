@@ -24,12 +24,14 @@ struct RegisterSubscriptionView: View {
         let userId = UserDefaults.standard.string(forKey: "userId")
         if viewModel.registerSubscription(
             userId: userId!,
-            name: name,
-            cycle: cycle,
-            price: price,
-            url: url,
-            statDate: startDate,
-            status: status
+            subscription: RegisterSubscription(
+                name: name,
+                cycle: cycle,
+                price: price,
+                url: url,
+                startDate: startDate,
+                status: status
+            )
         ) {
             print("register subscription is success")
         } else {

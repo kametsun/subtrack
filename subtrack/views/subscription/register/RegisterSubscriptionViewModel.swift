@@ -21,12 +21,7 @@ class RegisterSubscriptionViewModel: ObservableObject {
 
     func registerSubscription(
         userId: String?,
-        name: String,
-        cycle: Subscription.CycleType,
-        price: Int,
-        url: String,
-        statDate: Date,
-        status: Subscription.StatusType
+        subscription: RegisterSubscription
     ) -> Bool {
         if userId == nil {
             return false
@@ -35,12 +30,12 @@ class RegisterSubscriptionViewModel: ObservableObject {
             let subscription = Subscription(
                 id: id,
                 userId: userId!,
-                name: name,
-                url: url,
-                cycle: cycle,
-                price: price,
-                startDate: statDate,
-                status: status
+                name: subscription.name,
+                url: subscription.url,
+                cycle: subscription.cycle,
+                price: subscription.price,
+                startDate: subscription.startDate,
+                status: subscription.status
             )
             do {
                 try subscriptionRepository.registerSubscription(subscription)
@@ -51,4 +46,13 @@ class RegisterSubscriptionViewModel: ObservableObject {
         }
         return true
     }
+}
+
+struct RegisterSubscription {
+    let name: String
+    let cycle: Subscription.CycleType
+    let price: Int
+    let url: String
+    let startDate: Date
+    let status: Subscription.StatusType
 }
