@@ -28,7 +28,7 @@
 		A54DF0CD2C78A7FF00904AD7 /* DateFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DF0CC2C78A7FF00904AD7 /* DateFormatUtils.swift */; };
 		A581F0562C78DB98002406BA /* PreviewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A581F0552C78DB98002406BA /* PreviewUtils.swift */; };
 		A5B3AE482C78D8E800E3DE7B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3AE472C78D8E800E3DE7B /* HeaderView.swift */; };
-		A5E6288B2C74A18400BEBD2C /* RegisterSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288A2C74A18400BEBD2C /* RegisterSubscriptionView.swift */; };
+		A5E6288B2C74A18400BEBD2C /* SubscriptionSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288A2C74A18400BEBD2C /* SubscriptionSettingView.swift */; };
 		A5E6288D2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288C2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		A54DF0CC2C78A7FF00904AD7 /* DateFormatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatUtils.swift; sourceTree = "<group>"; };
 		A581F0552C78DB98002406BA /* PreviewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUtils.swift; sourceTree = "<group>"; };
 		A5B3AE472C78D8E800E3DE7B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		A5E6288A2C74A18400BEBD2C /* RegisterSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSubscriptionView.swift; sourceTree = "<group>"; };
+		A5E6288A2C74A18400BEBD2C /* SubscriptionSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionSettingView.swift; sourceTree = "<group>"; };
 		A5E6288C2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSubscriptionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,7 +214,7 @@
 		A5E628892C74A17000BEBD2C /* register */ = {
 			isa = PBXGroup;
 			children = (
-				A5E6288A2C74A18400BEBD2C /* RegisterSubscriptionView.swift */,
+				A5E6288A2C74A18400BEBD2C /* SubscriptionSettingView.swift */,
 				A5E6288C2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift */,
 			);
 			path = register;
@@ -333,7 +333,7 @@
 				A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */,
 				A53F22F72C72F10100939FF9 /* UserRepository.swift in Sources */,
 				A5106D232C722FD200BB1066 /* SubtrackApp.swift in Sources */,
-				A5E6288B2C74A18400BEBD2C /* RegisterSubscriptionView.swift in Sources */,
+				A5E6288B2C74A18400BEBD2C /* SubscriptionSettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

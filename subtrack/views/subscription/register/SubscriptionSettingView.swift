@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RegisterSubscriptionView: View {
+struct SubscriptionSettingView: View {
     @ObservedObject var viewModel: RegisterSubscriptionViewModel
     @State var name: String = ""
     @State var cycle: Subscription.CycleType = .MONTH
@@ -95,7 +95,7 @@ struct RegisterSubscriptionView: View {
                 }
             }
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
     }
 }
 
