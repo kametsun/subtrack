@@ -56,7 +56,7 @@ final class Subscription {
         case ACTIVE
         /** キャンセル */
         case CANCELLED
-        
+
         var description: String {
             return self.rawValue
         }

@@ -6,6 +6,7 @@ disabled_rules:
     - function_body_length
     #型が多くあってはいけない。
     - type_body_length
+    - function_parameter_count
 
 # defaultルール以外にopt-inから採用するルール
 opt_in_rules:
@@ -168,5 +169,3 @@ type_name:
     excluded:
     # クラス名はキャメルケースにする
       - lowerCamelClass
-
-

@@ -19,10 +19,10 @@ struct RegisterSubscriptionView: View {
     init(viewModel: RegisterSubscriptionViewModel) {
         self.viewModel = viewModel
     }
-    
+
     private func onAddClick() {
         let userId = UserDefaults.standard.string(forKey: "userId")
-        viewModel.registerSubscription(
+        if viewModel.registerSubscription(
             userId: userId!,
             name: name,
             cycle: cycle,
@@ -30,7 +30,11 @@ struct RegisterSubscriptionView: View {
             url: url,
             statDate: startDate,
             status: status
-        )
+        ) {
+            print("register subscription is success")
+        } else {
+            print("register subscription is failed")
+        }
     }
 
     var body: some View {

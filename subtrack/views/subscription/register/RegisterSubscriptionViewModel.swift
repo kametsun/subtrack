@@ -18,7 +18,7 @@ class RegisterSubscriptionViewModel: ObservableObject {
     init(subscriptionRepository: SubscriptionRepository) {
         self.subscriptionRepository = subscriptionRepository
     }
-    
+
     func registerSubscription(
         userId: String?,
         name: String,
@@ -28,7 +28,7 @@ class RegisterSubscriptionViewModel: ObservableObject {
         statDate: Date,
         status: Subscription.StatusType
     ) -> Bool {
-        if userId == nil{
+        if userId == nil {
             return false
         } else {
             let id = "subscription_" + UUID().uuidString
