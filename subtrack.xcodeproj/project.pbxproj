@@ -29,7 +29,7 @@
 		A581F0562C78DB98002406BA /* PreviewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A581F0552C78DB98002406BA /* PreviewUtils.swift */; };
 		A5B3AE482C78D8E800E3DE7B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3AE472C78D8E800E3DE7B /* HeaderView.swift */; };
 		A5E6288B2C74A18400BEBD2C /* SubscriptionSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288A2C74A18400BEBD2C /* SubscriptionSettingView.swift */; };
-		A5E6288D2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288C2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift */; };
+		A5E6288D2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288C2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,7 @@
 		A581F0552C78DB98002406BA /* PreviewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUtils.swift; sourceTree = "<group>"; };
 		A5B3AE472C78D8E800E3DE7B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A5E6288A2C74A18400BEBD2C /* SubscriptionSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionSettingView.swift; sourceTree = "<group>"; };
-		A5E6288C2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSubscriptionViewModel.swift; sourceTree = "<group>"; };
+		A5E6288C2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSubscriptionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E6288A2C74A18400BEBD2C /* SubscriptionSettingView.swift */,
-				A5E6288C2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift */,
+				A5E6288C2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 				A53F22E92C72D15600939FF9 /* Subscription.swift in Sources */,
 				A52BE43E2C742B7D0010D3D5 /* HomeViewModel.swift in Sources */,
 				A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */,
-				A5E6288D2C74A25700BEBD2C /* RegisterSubscriptionViewModel.swift in Sources */,
+				A5E6288D2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift in Sources */,
 				A52BE4422C7436160010D3D5 /* SubscriptionRepository.swift in Sources */,
 				A581F0562C78DB98002406BA /* PreviewUtils.swift in Sources */,
 				A5B3AE482C78D8E800E3DE7B /* HeaderView.swift in Sources */,

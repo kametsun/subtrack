@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SubscriptionSettingView: View {
-    @ObservedObject var viewModel: RegisterSubscriptionViewModel
+    @ObservedObject var viewModel: SettingSubscriptionViewModel
     @State var name: String = ""
     @State var cycle: Subscription.CycleType = .MONTH
     @State var price: Int = 0
@@ -16,7 +16,7 @@ struct SubscriptionSettingView: View {
     @State var startDate: Date = Date()
     @State var status: Subscription.StatusType = .ACTIVE
 
-    init(viewModel: RegisterSubscriptionViewModel) {
+    init(viewModel: SettingSubscriptionViewModel) {
         self.viewModel = viewModel
     }
 
@@ -24,7 +24,7 @@ struct SubscriptionSettingView: View {
         let userId = UserDefaults.standard.string(forKey: "userId")
         if viewModel.registerSubscription(
             userId: userId!,
-            subscription: RegisterSubscription(
+            subscription: SettingSubscription(
                 name: name,
                 cycle: cycle,
                 price: price,

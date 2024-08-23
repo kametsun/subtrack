@@ -10,7 +10,7 @@ import Foundation
 /**
  * サブスクリプション登録画面の状態を管理するViewModel
  */
-class RegisterSubscriptionViewModel: ObservableObject {
+class SettingSubscriptionViewModel: ObservableObject {
     private var subscriptionRepository: SubscriptionRepository
 
     @Published var errorMessage = ""
@@ -21,7 +21,7 @@ class RegisterSubscriptionViewModel: ObservableObject {
 
     func registerSubscription(
         userId: String?,
-        subscription: RegisterSubscription
+        subscription: SettingSubscription
     ) -> Bool {
         if userId == nil {
             return false
@@ -48,7 +48,7 @@ class RegisterSubscriptionViewModel: ObservableObject {
     }
 }
 
-struct RegisterSubscription {
+struct SettingSubscription {
     let name: String
     let cycle: Subscription.CycleType
     let price: Int
