@@ -29,7 +29,20 @@ struct HomeView: View {
             } else {
                 VStack {
                     List(viewModel.subscriptions) { subscription in
-                        Section(header: Text("Subscriptions").foregroundColor(.white)) {
+                        Section(header: HStack {
+                            Text("Subscriptions").foregroundColor(.white)
+                            Spacer()
+                            NavigationLink(
+                                destination: RegisterSubscriptionView(
+                                    viewModel: appEnvironment.registerSubscriptionViewModel
+                                )
+                            ) {
+                                Text("Add")
+                                    .foregroundColor(.white)
+                            }
+                        }
+                        .headerProminence(.increased)
+                        ) {
                             Text(subscription.name)
                                 .font(.headline)
                                 .foregroundColor(.white)
@@ -43,5 +56,24 @@ struct HomeView: View {
         .onAppear {
             viewModel.getSubscriptions()
         }
+    }
+}
+
+struct HomeViewPreview: PreviewProvider {
+    static var previews: some View {
+        let modelContainer = getSharedModelContainerPreview()
+        let appEnvironment = AppEnvironment(
+            modelContext: modelContainer.mainContext
+        )
+        let subscriptionRepository = SubscriptionRepository(
+            modelContext: modelContainer.mainContext
+        )
+        let viewModel = HomeViewModel(
+            subscriptionRepository: subscriptionRepository
+        )
+
+        return HomeView(viewModel: viewModel)
+            .environmentObject(appEnvironment)
+            .modelContainer(modelContainer)
     }
 }
