@@ -12,6 +12,7 @@ struct RegisterSubscriptionView: View {
     @State var name: String = ""
     @State var cycle: Subscription.CycleType = .MONTH
     @State var price: Int = 0
+    @State var url: String = ""
 
     init(viewModel: RegisterSubscriptionViewModel) {
         self.viewModel = viewModel
@@ -39,6 +40,11 @@ struct RegisterSubscriptionView: View {
                             value: price,
                             title: "Price",
                             placeholder: "Enter price"
+                        )
+                        ListRow(
+                            value: url,
+                            title: "URL",
+                            placeholder: "Enter url"
                         )
                     }
                     .listRowBackground(Color.darkGray)
