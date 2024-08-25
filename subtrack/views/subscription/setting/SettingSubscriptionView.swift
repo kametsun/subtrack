@@ -28,6 +28,7 @@ struct SettingSubscriptionView: View {
                 id: subscription.id,
                 name: subscription.name,
                 cycle: subscription.cycle,
+                currency: subscription.currency,
                 price: subscription.price,
                 url: subscription.url,
                 startDate: subscription.startDate,

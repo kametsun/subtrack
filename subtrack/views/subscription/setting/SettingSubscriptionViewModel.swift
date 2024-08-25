@@ -50,6 +50,7 @@ class SettingSubscriptionViewModel: ObservableObject {
             name: subscription.name,
             url: subscription.url,
             cycle: subscription.cycle,
+            currency: subscription.currency,
             price: subscription.price,
             startDate: subscription.startDate,
             status: subscription.status
@@ -65,6 +66,7 @@ class SettingSubscriptionViewModel: ObservableObject {
             name: subscription.name,
             url: subscription.url,
             cycle: subscription.cycle,
+            currency: subscription.currency,
             price: subscription.price,
             startDate: subscription.startDate,
             status: subscription.status
@@ -85,6 +87,7 @@ class SettingSubscriptionViewModel: ObservableObject {
             id: subscription?.id ?? "",
             name: subscription?.name ?? "",
             cycle: subscription?.cycle ?? .MONTH,
+            currency: subscription?.currency ?? .USD,
             price: subscription?.price ?? 0,
             url: subscription?.url ?? "",
             startDate: subscription?.startDate ?? Date(),
@@ -103,7 +106,8 @@ struct SettingSubscription {
     var id: String
     var name: String
     var cycle: Subscription.CycleType
-    var price: Int
+    var currency: CurrencyType
+    var price: Double
     var url: String
     var startDate: Date
     var status: Subscription.StatusType

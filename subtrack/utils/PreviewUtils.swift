@@ -50,6 +50,7 @@ func createPreviewData(modelContext: ModelContext) {
                 name: "Apple Music",
                 url: "",
                 cycle: .MONTH,
+                currency: .USD,
                 price: 980,
                 startDate: Date(),
                 status: .ACTIVE

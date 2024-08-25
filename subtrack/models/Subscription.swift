@@ -26,8 +26,10 @@ final class Subscription {
     var cycle: CycleType
     /** ステータス */
     var status: StatusType
+    /** 通過 */
+    var currency: CurrencyType
     /** 料金 */
-    var price: Int
+    var price: Double
     /** サブスクリプション開始日 */
     var startDate: Date
     /** 作成日 */
@@ -68,7 +70,8 @@ final class Subscription {
         name: String,
         url: String,
         cycle: CycleType,
-        price: Int,
+        currency: CurrencyType,
+        price: Double,
         startDate: Date,
         status: StatusType,
         user: User? = nil
@@ -78,6 +81,7 @@ final class Subscription {
         self.name = name
         self.url = url
         self.cycle = cycle
+        self.currency = currency
         self.price = price
         self.startDate = startDate
         self.status = status
