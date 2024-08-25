@@ -23,7 +23,9 @@ struct HomeView: View {
 
             if viewModel.subscriptions.isEmpty {
                 NavigationLink(
-                    destination: SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: false)
+                    destination: SettingSubscriptionView(
+                        viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: false
+                    )
                 ) {
                     Text("Add Subscriptions")
                 }
@@ -60,7 +62,7 @@ struct HomeView: View {
                             .fontWeight(.bold)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {isAdd = true}) {
+                        Button(action: setIsAdd) {
                             Text("Add")
                                 .foregroundColor(.white)
                         }
@@ -86,6 +88,10 @@ struct HomeView: View {
             Text("Subscriptions").foregroundColor(.white)
         }
         .headerProminence(.increased)
+    }
+
+    func setIsAdd() {
+        self.isAdd = true
     }
 }
 
