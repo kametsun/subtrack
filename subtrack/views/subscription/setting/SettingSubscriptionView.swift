@@ -43,7 +43,7 @@ struct SettingSubscriptionView: View {
 
     var body: some View {
         ZStack {
-            Color.background
+            Color.primaryColor
                 .ignoresSafeArea()
 
             Form {
@@ -86,7 +86,7 @@ struct SettingSubscriptionView: View {
                             placeholder: subscription.status.rawValue
                         )
                     }
-                    .listRowBackground(Color.darkGray)
+                    .listRowBackground(Color.secondaryColor)
                 }
             }.scrollContentBackground(.hidden)
         }
@@ -146,7 +146,7 @@ struct ListRow<T: Equatable & Hashable>: View {
                     Text(formatDate(dateValue))
                 }
             }
-            .foregroundColor(.white)
+            .foregroundColor(.textColor)
         }
     }
 
@@ -168,7 +168,7 @@ struct EditView<T: Equatable & Hashable>: View {
 
     var body: some View {
         ZStack {
-            Color.background
+            Color.primaryColor
                 .ignoresSafeArea()
 
             VStack {
@@ -177,7 +177,7 @@ struct EditView<T: Equatable & Hashable>: View {
                         ForEach(Subscription.CycleType.allCases, id: \.self) { cycle in
                             Text(cycle.rawValue)
                                 .tag(cycle)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color.textColor)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
@@ -187,7 +187,7 @@ struct EditView<T: Equatable & Hashable>: View {
                         ForEach(Subscription.StatusType.allCases, id: \.self) { status in
                             Text(status.rawValue)
                                 .tag(status)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color.textColor)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
@@ -197,7 +197,7 @@ struct EditView<T: Equatable & Hashable>: View {
                         ForEach(CurrencyType.allCases, id: \.self) { currency in
                             Text(currency.rawValue)
                                 .tag(currency)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color.textColor)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
@@ -212,7 +212,7 @@ struct EditView<T: Equatable & Hashable>: View {
                         }
                     ))
                     .padding()
-                    .background(.white)
+                    .background(Color.secondaryColor)
                     .cornerRadius(10)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
@@ -230,7 +230,7 @@ struct EditView<T: Equatable & Hashable>: View {
                     ))
                     .keyboardType(.numberPad)
                     .padding()
-                    .background(.white)
+                    .background(Color.secondaryColor)
                     .cornerRadius(10)
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)
@@ -254,7 +254,7 @@ struct EditView<T: Equatable & Hashable>: View {
                     ))
                     .keyboardType(.decimalPad)
                     .padding()
-                    .background(.white)
+                    .background(Color.secondaryColor)
                     .cornerRadius(10)
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)
@@ -276,8 +276,7 @@ struct EditView<T: Equatable & Hashable>: View {
                         }
                     ), displayedComponents: .date)
                     .datePickerStyle(GraphicalDatePickerStyle())
-                    .accentColor(.white)
-                    .colorScheme(.dark)
+                    .accentColor(Color.textColor)
                     .padding()
                 }
             }
@@ -285,7 +284,7 @@ struct EditView<T: Equatable & Hashable>: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text(title)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(Color.textColor)
                         .fontWeight(.bold)
                 }
             }

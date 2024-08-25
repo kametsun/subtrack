@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LaunchView: View {
     @EnvironmentObject var appEnvironment: AppEnvironment
+    @Environment(\.colorScheme) var colorScheme
     @StateObject private var viewMoel = LaunchViewModel()
 
     var body: some View {
@@ -24,10 +25,15 @@ struct LaunchView: View {
                 )
             }
         } else {
-            VStack {
-                Text("SubTrack")
-                    .font(.largeTitle)
-                    .padding()
+            ZStack {
+                Color.primaryColor
+                    .ignoresSafeArea()
+                VStack {
+                    Text("SubTrack")
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                        .foregroundColor(self.colorScheme == .dark ? Color.textColor : .white)
+                }
             }
             .onAppear {
                 viewMoel.startLaunchProcess()

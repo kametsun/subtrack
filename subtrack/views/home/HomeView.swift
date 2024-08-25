@@ -19,7 +19,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            Color.background
+            Color.primaryColor
                 .ignoresSafeArea()
 
             if viewModel.subscriptions.isEmpty {
@@ -49,8 +49,8 @@ struct HomeView: View {
                                         Text(String(subscription.price))
                                     }
                                 }
-                                .foregroundColor(.white)
-                                .listRowBackground(Color.darkGray)
+                                .foregroundColor(.textColor)
+                                .listRowBackground(Color.secondaryColor)
                             }
                         }
                     }

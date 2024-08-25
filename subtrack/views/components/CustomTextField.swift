@@ -23,7 +23,7 @@ struct CustomTextField: View {
                 }
                 .padding(.vertical, 2)
                 .padding(.horizontal, 40)
-                .background(Color.background)
+                .background(Color.primaryColor)
                 .foregroundColor(Color.text)
             Rectangle()
                 .frame(height: 2)

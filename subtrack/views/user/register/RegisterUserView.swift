@@ -35,12 +35,12 @@ struct RegisterUserView: View {
 
     var userExistView: some View {
         ZStack {
-            Color.background
+            Color.primaryColor
                 .ignoresSafeArea()
 
             VStack(spacing: 20) {
                 Text("Set up your first subscription!")
-                    .foregroundColor(.text)
+                    .foregroundColor(.textColor)
                     .font(.title)
 
                 CustomButton(label: "OK") {
@@ -56,12 +56,12 @@ struct RegisterUserView: View {
 
     var enterNameView: some View {
         ZStack {
-            Color.background
+            Color.primaryColor
                 .ignoresSafeArea()
 
             VStack(spacing: 20) {
                 Text("What's your name?")
-                    .foregroundColor(.text)
+                    .foregroundColor(.textColor)
                     .font(.title)
 
                 CustomTextField(placeholder: "Enter your name", text: $name)
@@ -75,12 +75,12 @@ struct RegisterUserView: View {
 
     var enterNotifyBeforeDays: some View {
         ZStack {
-            Color.background
+            Color.primaryColor
                 .ignoresSafeArea()
 
             VStack(spacing: 20) {
                 Text("How many days' notice do you want?")
-                    .foregroundColor(.text)
+                    .foregroundColor(.textColor)
                     .font(.title)
 
                 CustomTextField(placeholder: "Enter notify before days", text: $strNotifyBeforeDays, isNumeric: true)

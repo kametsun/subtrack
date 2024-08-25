@@ -19,7 +19,7 @@ struct SettingView: View {
 
     var body: some View {
         ZStack {
-            Color.background
+            Color.primaryColor
                 .ignoresSafeArea()
 
             if isLoading {
@@ -63,22 +63,20 @@ struct SettingView: View {
                             HStack {
                                 Text("Notification Settings")
                                 Spacer()
-                            }
-                            .onTapGesture {
+                            }.onTapGesture {
                                 openAppSettings()
                             }
                         }
-                        .listRowBackground(Color.darkGray)
+                        .listRowBackground(Color.secondaryColor)
                     }
-                    .foregroundColor(.white)
                 }
                 .scrollContentBackground(.hidden)
+                .foregroundColor(.textColor)
             }
         }
         .onAppear {
             loadUser()
         }
-
     }
 
     private func loadUser() {
