@@ -39,8 +39,12 @@ struct HomeView: View {
                                         isNewUser: false
                                     )
                                 ) {
-                                    Text(subscription.name)
-                                        .font(.headline)
+                                    HStack {
+                                        Text(subscription.name)
+                                            .font(.headline)
+                                        Spacer()
+                                        Text(String(subscription.price))
+                                    }
                                 }
                                 .foregroundColor(.white)
                                 .listRowBackground(Color.darkGray)
