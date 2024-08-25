@@ -67,7 +67,8 @@ struct SettingSubscriptionView: View {
                         ListRow(
                             value: $subscription.price,
                             title: "Price",
-                            placeholder: "Enter price"
+                            placeholder: "Enter price",
+                            currencyType: subscription.currency
                         )
                         ListRow(
                             value: $subscription.url,
@@ -117,6 +118,7 @@ struct ListRow<T: Equatable & Hashable>: View {
     @Binding var value: T
     var title: String
     var placeholder: String
+    var currencyType: CurrencyType?
 
     var body: some View {
         NavigationLink(destination: EditView(value: $value, title: title)) {
@@ -134,12 +136,28 @@ struct ListRow<T: Equatable & Hashable>: View {
                 } else if let intValue = value as? Int {
                     Text(String(intValue))
                 } else if let doubleValue = value as? Double {
+                    if currencyType != nil {
+                        Image(systemName: currencyIcon(for: currencyType!))
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.white)
+                    }
                     Text(String(doubleValue))
                 } else if let dateValue = value as? Date {
                     Text(formatDate(dateValue))
                 }
             }
             .foregroundColor(.white)
+        }
+    }
+
+    func currencyIcon(for currencyType: CurrencyType) -> String {
+        switch currencyType {
+        case .JPY:
+            return "yensign"
+        case .USD:
+            return "dollarsign"
+        case .EUR:
+            return "eurosign"
         }
     }
 }
@@ -169,6 +187,16 @@ struct EditView<T: Equatable & Hashable>: View {
                         ForEach(Subscription.StatusType.allCases, id: \.self) { status in
                             Text(status.rawValue)
                                 .tag(status)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .padding()
+                } else if value as? CurrencyType != nil {
+                    Picker(title, selection: $value) {
+                        ForEach(CurrencyType.allCases, id: \.self) { currency in
+                            Text(currency.rawValue)
+                                .tag(currency)
                                 .foregroundColor(.white)
                         }
                     }
