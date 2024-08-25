@@ -13,7 +13,16 @@ struct LaunchView: View {
 
     var body: some View {
         if viewMoel.isActive {
-            RegisterUserView(viewModel: appEnvironment.registerUserViewModel)
+            switch viewMoel.viewState {
+            case .registerUser:
+                RegisterUserView(
+                    viewModel: appEnvironment.registerUserViewModel
+                )
+            case .home:
+                HomeView(
+                    viewModel: appEnvironment.homeViewModel
+                )
+            }
         } else {
             VStack {
                 Text("Launch")
@@ -24,13 +33,5 @@ struct LaunchView: View {
                 viewMoel.startLaunchProcess()
             }
         }
-    }
-}
-
-struct HomeView: View {
-    var body: some View {
-        Text("Home")
-            .font(.largeTitle)
-            .padding()
     }
 }

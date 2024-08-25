@@ -12,6 +12,9 @@
 		A5106D292C722FD200BB1066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5106D282C722FD200BB1066 /* Assets.xcassets */; };
 		A5106D2C2C722FD200BB1066 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5106D2B2C722FD200BB1066 /* Preview Assets.xcassets */; };
 		A5106D342C72317900BB1066 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5106D332C72317900BB1066 /* User.swift */; };
+		A52BE43E2C742B7D0010D3D5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */; };
+		A52BE4402C742B8A0010D3D5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE43F2C742B8A0010D3D5 /* HomeView.swift */; };
+		A52BE4422C7436160010D3D5 /* SubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE4412C7436160010D3D5 /* SubscriptionRepository.swift */; };
 		A53F22E92C72D15600939FF9 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22E82C72D15600939FF9 /* Subscription.swift */; };
 		A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22EC2C72E35C00939FF9 /* LaunchViewModel.swift */; };
 		A53F22EF2C72E51F00939FF9 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22EE2C72E51F00939FF9 /* LaunchView.swift */; };
@@ -22,6 +25,10 @@
 		A53F23002C732A0A00939FF9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22FF2C732A0A00939FF9 /* Color.swift */; };
 		A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F23022C732A7E00939FF9 /* CustomTextField.swift */; };
 		A53F23052C732CEE00939FF9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F23042C732CEE00939FF9 /* CustomButton.swift */; };
+		A54DF0CD2C78A7FF00904AD7 /* DateFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DF0CC2C78A7FF00904AD7 /* DateFormatUtils.swift */; };
+		A581F0562C78DB98002406BA /* PreviewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A581F0552C78DB98002406BA /* PreviewUtils.swift */; };
+		A5E6288B2C74A18400BEBD2C /* SettingSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288A2C74A18400BEBD2C /* SettingSubscriptionView.swift */; };
+		A5E6288D2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288C2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,9 @@
 		A5106D282C722FD200BB1066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5106D2B2C722FD200BB1066 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5106D332C72317900BB1066 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A52BE43F2C742B8A0010D3D5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A52BE4412C7436160010D3D5 /* SubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRepository.swift; sourceTree = "<group>"; };
 		A53F22E82C72D15600939FF9 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		A53F22EC2C72E35C00939FF9 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		A53F22EE2C72E51F00939FF9 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -41,6 +51,10 @@
 		A53F22FF2C732A0A00939FF9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A53F23022C732A7E00939FF9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A53F23042C732CEE00939FF9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		A54DF0CC2C78A7FF00904AD7 /* DateFormatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatUtils.swift; sourceTree = "<group>"; };
+		A581F0552C78DB98002406BA /* PreviewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUtils.swift; sourceTree = "<group>"; };
+		A5E6288A2C74A18400BEBD2C /* SettingSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSubscriptionView.swift; sourceTree = "<group>"; };
+		A5E6288C2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSubscriptionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +87,7 @@
 		A5106D212C722FD200BB1066 /* subtrack */ = {
 			isa = PBXGroup;
 			children = (
+				A54DF0CB2C78A7DF00904AD7 /* utils */,
 				A53F22FA2C731BFF00939FF9 /* di */,
 				A53F22F52C72F0F400939FF9 /* repositories */,
 				A53F22EB2C72E34600939FF9 /* views */,
@@ -103,9 +118,20 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		A52BE43C2C742B6B0010D3D5 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */,
+				A52BE43F2C742B8A0010D3D5 /* HomeView.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
 		A53F22EB2C72E34600939FF9 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				A5E628882C74A16300BEBD2C /* subscription */,
+				A52BE43C2C742B6B0010D3D5 /* home */,
 				A53F23012C732A6400939FF9 /* components */,
 				A53F22F12C72EF8100939FF9 /* user */,
 				A53F22F02C72E70B00939FF9 /* launch */,
@@ -143,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A53F22F62C72F10100939FF9 /* UserRepository.swift */,
+				A52BE4412C7436160010D3D5 /* SubscriptionRepository.swift */,
 			);
 			path = repositories;
 			sourceTree = "<group>";
@@ -162,6 +189,32 @@
 				A53F23042C732CEE00939FF9 /* CustomButton.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		A54DF0CB2C78A7DF00904AD7 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A54DF0CC2C78A7FF00904AD7 /* DateFormatUtils.swift */,
+				A581F0552C78DB98002406BA /* PreviewUtils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		A5E628882C74A16300BEBD2C /* subscription */ = {
+			isa = PBXGroup;
+			children = (
+				A5E628892C74A17000BEBD2C /* register */,
+			);
+			path = subscription;
+			sourceTree = "<group>";
+		};
+		A5E628892C74A17000BEBD2C /* register */ = {
+			isa = PBXGroup;
+			children = (
+				A5E6288A2C74A18400BEBD2C /* SettingSubscriptionView.swift */,
+				A5E6288C2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift */,
+			);
+			path = register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix --format --no-cache\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -260,16 +313,23 @@
 				A53F23052C732CEE00939FF9 /* CustomButton.swift in Sources */,
 				A5106D342C72317900BB1066 /* User.swift in Sources */,
 				A53F22EF2C72E51F00939FF9 /* LaunchView.swift in Sources */,
+				A52BE4402C742B8A0010D3D5 /* HomeView.swift in Sources */,
+				A54DF0CD2C78A7FF00904AD7 /* DateFormatUtils.swift in Sources */,
 				A53F23002C732A0A00939FF9 /* Color.swift in Sources */,
 				A53F22F42C72EFE500939FF9 /* RegisterUserViewModel.swift in Sources */,
 				A53F22F92C72F5C200939FF9 /* RegisterUserView.swift in Sources */,
 				A5106D252C722FD200BB1066 /* ContentView.swift in Sources */,
 				A53F22FC2C731C1D00939FF9 /* AppEnvironment.swift in Sources */,
 				A53F22E92C72D15600939FF9 /* Subscription.swift in Sources */,
+				A52BE43E2C742B7D0010D3D5 /* HomeViewModel.swift in Sources */,
 				A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */,
+				A5E6288D2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift in Sources */,
+				A52BE4422C7436160010D3D5 /* SubscriptionRepository.swift in Sources */,
+				A581F0562C78DB98002406BA /* PreviewUtils.swift in Sources */,
 				A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */,
 				A53F22F72C72F10100939FF9 /* UserRepository.swift in Sources */,
 				A5106D232C722FD200BB1066 /* SubtrackApp.swift in Sources */,
+				A5E6288B2C74A18400BEBD2C /* SettingSubscriptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

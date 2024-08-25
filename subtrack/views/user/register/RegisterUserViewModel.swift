@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 /**
  * ユーザ登録画面の状態を管理するViewModel
@@ -51,6 +50,7 @@ class RegisterUserViewModel: ObservableObject {
                 subscriptions: [Subscription]()
             )
             try userRepository.registerUser(user: user)
+            UserDefaults.standard.set(id, forKey: "userId")
             name = ""
             notifyBeforeDays = 0
         } catch {
