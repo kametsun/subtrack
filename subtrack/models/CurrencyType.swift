@@ -18,4 +18,15 @@ enum CurrencyType: String, Codable, CaseIterable, CustomStringConvertible {
     var description: String {
         return self.rawValue
     }
+
+    static func currencyIcon(for currencyType: CurrencyType) -> String {
+        switch currencyType {
+        case .JPY:
+            return "yensign"
+        case .USD:
+            return "dollarsign"
+        case .EUR:
+            return "eurosign"
+        }
+    }
 }

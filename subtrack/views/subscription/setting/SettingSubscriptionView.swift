@@ -137,9 +137,9 @@ struct ListRow<T: Equatable & Hashable>: View {
                     Text(String(intValue))
                 } else if let doubleValue = value as? Double {
                     if currencyType != nil {
-                        Image(systemName: currencyIcon(for: currencyType!))
+                        Image(systemName: CurrencyType.currencyIcon(for: currencyType!))
                             .symbolRenderingMode(.palette)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(Color.textColor)
                     }
                     Text(String(doubleValue))
                 } else if let dateValue = value as? Date {
@@ -147,17 +147,6 @@ struct ListRow<T: Equatable & Hashable>: View {
                 }
             }
             .foregroundColor(.textColor)
-        }
-    }
-
-    func currencyIcon(for currencyType: CurrencyType) -> String {
-        switch currencyType {
-        case .JPY:
-            return "yensign"
-        case .USD:
-            return "dollarsign"
-        case .EUR:
-            return "eurosign"
         }
     }
 }

@@ -46,6 +46,9 @@ struct HomeView: View {
                                         Text(subscription.name)
                                             .font(.headline)
                                         Spacer()
+                                        Image(systemName: CurrencyType.currencyIcon(for: subscription.currency))
+                                            .symbolRenderingMode(.palette)
+                                            .foregroundStyle(Color.textColor)
                                         Text(String(subscription.price))
                                     }
                                 }
