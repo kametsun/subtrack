@@ -100,6 +100,7 @@ struct SettingSubscriptionView: View {
             }
         }
         .navigationBarBackButtonHidden(isNewUser ? true : false)
+        .toolbarBackground(.hidden, for: .navigationBar)
         .navigationDestination(isPresented: $isNavigateToHome) {
             HomeView(viewModel: appEnvironment.homeViewModel)
         }

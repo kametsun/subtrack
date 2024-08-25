@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var appEnvironment: AppEnvironment
     @ObservedObject var viewModel: HomeViewModel
+    @State private var isAdd: Bool = false
 
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -54,27 +55,31 @@ struct HomeView: View {
                             .foregroundStyle(.white)
                             .fontWeight(.bold)
                     }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {isAdd = true}) {
+                            Text("Add")
+                                .foregroundColor(.white)
+                        }
+                    }
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(.background, for: .navigationBar)
-                .navigationBarBackButtonHidden(true)
             }
         }
         .onAppear {
             viewModel.getSubscriptions()
         }
+        .navigationDestination(isPresented: $isAdd) {
+            SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: false)
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .toolbarBackground(.background, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .navigationBarBackButtonHidden(true)
     }
 
     var sectionHeader: some View {
         HStack {
             Text("Subscriptions").foregroundColor(.white)
-            Spacer()
-            NavigationLink(
-                destination: SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: false)
-            ) {
-                Text("Add")
-                    .foregroundColor(.white)
-            }
         }
         .headerProminence(.increased)
     }
