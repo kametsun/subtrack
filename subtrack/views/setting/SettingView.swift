@@ -60,6 +60,13 @@ struct SettingView: View {
                                 Spacer()
                                 Text(String(viewModel.user!.notifyBeforeDays) + "day ago")
                             }
+                            HStack {
+                                Text("Notification Settings")
+                                Spacer()
+                            }
+                            .onTapGesture {
+                                openAppSettings()
+                            }
                         }
                         .listRowBackground(Color.darkGray)
                     }
@@ -80,6 +87,15 @@ struct SettingView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             viewModel.getUser(userId)
             isLoading = false
+        }
+    }
+
+    private func openAppSettings() {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 }

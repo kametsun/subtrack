@@ -79,6 +79,7 @@ struct HomeView: View {
         }
         .onAppear {
             viewModel.getSubscriptions()
+            requestNotificationAuthorization()
         }
         .navigationDestination(isPresented: $isAdd) {
             SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: false)
@@ -106,6 +107,17 @@ struct HomeView: View {
 
     func setIsSetting() {
         self.isSetting = true
+    }
+
+    func requestNotificationAuthorization() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                print("Notification access granted.")
+            } else if let error = error {
+                print("Notification access denied.")
+                print("Error: \(error.localizedDescription)")
+            }
+        }
     }
 }
 
