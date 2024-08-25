@@ -9,9 +9,11 @@ import SwiftUI
 import SwiftData
 
 struct RegisterUserView: View {
+    @EnvironmentObject var appEnvironment: AppEnvironment
     @ObservedObject var viewModel: RegisterUserViewModel
     @State var name = ""
     @State var strNotifyBeforeDays = ""
+    @State private var navigateToSettingSubscription = false
 
     init(viewModel: RegisterUserViewModel) {
         self.viewModel = viewModel
@@ -43,7 +45,11 @@ struct RegisterUserView: View {
 
                 CustomButton(label: "OK") {
                     viewModel.registerUser()
+                    navigateToSettingSubscription = true
                 }
+            }
+            .navigationDestination(isPresented: $navigateToSettingSubscription) {
+                SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: true)
             }
         }
     }

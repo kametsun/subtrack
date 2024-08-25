@@ -22,7 +22,7 @@ struct HomeView: View {
 
             if viewModel.subscriptions.isEmpty {
                 NavigationLink(
-                    destination: SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel)
+                    destination: SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: false)
                 ) {
                     Text("Add Subscriptions")
                 }
@@ -34,7 +34,8 @@ struct HomeView: View {
                                 NavigationLink(
                                     destination: SettingSubscriptionView(
                                         viewModel: appEnvironment.settingSubscriptionViewModel,
-                                        subscriptionId: subscription.id
+                                        subscriptionId: subscription.id,
+                                        isNewUser: false
                                     )
                                 ) {
                                     Text(subscription.name)
@@ -56,6 +57,7 @@ struct HomeView: View {
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(.background, for: .navigationBar)
+                .navigationBarBackButtonHidden(true)
             }
         }
         .onAppear {
@@ -68,7 +70,7 @@ struct HomeView: View {
             Text("Subscriptions").foregroundColor(.white)
             Spacer()
             NavigationLink(
-                destination: SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel)
+                destination: SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: false)
             ) {
                 Text("Add")
                     .foregroundColor(.white)

@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct SettingSubscriptionView: View {
+    @EnvironmentObject var appEnvironment: AppEnvironment
     @ObservedObject var viewModel: SettingSubscriptionViewModel
     @State var subscription: SettingSubscription
+    @State private var isNewUser: Bool
+    @State private var isNavigateToHome = false
 
-    init(viewModel: SettingSubscriptionViewModel, subscriptionId: String = "") {
+    init(viewModel: SettingSubscriptionViewModel, subscriptionId: String = "", isNewUser: Bool) {
         self.viewModel = viewModel
         self.subscription = viewModel.getSubscriptionById(subscriptionId)
+        self.isNewUser = isNewUser
     }
 
     private func onAddClick() {
@@ -30,9 +34,9 @@ struct SettingSubscriptionView: View {
                 status: subscription.status
             )
         ) {
-
+            isNavigateToHome = true
         } else {
-
+            isNavigateToHome = false
         }
     }
 
@@ -95,7 +99,10 @@ struct SettingSubscriptionView: View {
                 }
             }
         }
-        .navigationBarBackButtonHidden(false)
+        .navigationBarBackButtonHidden(isNewUser ? true : false)
+        .navigationDestination(isPresented: $isNavigateToHome) {
+            HomeView(viewModel: appEnvironment.homeViewModel)
+        }
     }
 }
 

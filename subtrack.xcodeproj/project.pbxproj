@@ -203,18 +203,18 @@
 		A5E628882C74A16300BEBD2C /* subscription */ = {
 			isa = PBXGroup;
 			children = (
-				A5E628892C74A17000BEBD2C /* register */,
+				A5E628892C74A17000BEBD2C /* setting */,
 			);
 			path = subscription;
 			sourceTree = "<group>";
 		};
-		A5E628892C74A17000BEBD2C /* register */ = {
+		A5E628892C74A17000BEBD2C /* setting */ = {
 			isa = PBXGroup;
 			children = (
 				A5E6288A2C74A18400BEBD2C /* SettingSubscriptionView.swift */,
 				A5E6288C2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift */,
 			);
-			path = register;
+			path = setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
