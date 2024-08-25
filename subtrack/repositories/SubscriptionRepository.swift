@@ -27,6 +27,20 @@ class SubscriptionRepository {
         }
     }
 
+    func getSubscriptionById(_ subscriptionId: String) -> Subscription? {
+        let fetchDescriptor = FetchDescriptor<Subscription>(
+            predicate: #Predicate {
+                $0.id == subscriptionId
+            }
+        )
+        do {
+            let subscriptions = try modelContext.fetch(fetchDescriptor)
+            return subscriptions.first
+        } catch {
+            return nil
+        }
+    }
+
     func registerSubscription(_ subscription: Subscription) throws {
         modelContext.insert(subscription)
         try modelContext.save()

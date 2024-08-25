@@ -12,7 +12,7 @@ import SwiftUI
 class AppEnvironment: ObservableObject {
     @Published var registerUserViewModel: RegisterUserViewModel
     @Published var homeViewModel: HomeViewModel
-    @Published var registerSubscriptionViewModel: SettingSubscriptionViewModel
+    @Published var settingSubscriptionViewModel: SettingSubscriptionViewModel
 
     init(modelContext: ModelContext) {
         let userRepository = UserRepository(modelContext: modelContext)
@@ -24,7 +24,7 @@ class AppEnvironment: ObservableObject {
         self.homeViewModel = HomeViewModel(
             subscriptionRepository: subscriptionRepository
         )
-        self.registerSubscriptionViewModel = SettingSubscriptionViewModel(
+        self.settingSubscriptionViewModel = SettingSubscriptionViewModel(
             subscriptionRepository: subscriptionRepository
         )
     }

@@ -22,31 +22,26 @@ struct HomeView: View {
 
             if viewModel.subscriptions.isEmpty {
                 NavigationLink(
-                    destination: SubscriptionSettingView(viewModel: appEnvironment.registerSubscriptionViewModel)
+                    destination: SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel)
                 ) {
                     Text("Add Subscriptions")
                 }
             } else {
                 VStack {
-                    List(viewModel.subscriptions) { subscription in
-                        Section(header: HStack {
-                            Text("Subscriptions").foregroundColor(.white)
-                            Spacer()
-                            NavigationLink(
-                                destination: SubscriptionSettingView(
-                                    viewModel: appEnvironment.registerSubscriptionViewModel
-                                )
-                            ) {
-                                Text("Add")
-                                    .foregroundColor(.white)
-                            }
-                        }
-                        .headerProminence(.increased)
-                        ) {
-                            Text(subscription.name)
-                                .font(.headline)
+                    List {
+                        Section(header: SectionHeader) {
+                            ForEach(viewModel.subscriptions) {subscription in
+                                NavigationLink(
+                                    destination: SettingSubscriptionView(
+                                        viewModel: appEnvironment.settingSubscriptionViewModel, subscriptionId: subscription.id
+                                    )
+                                ) {
+                                    Text(subscription.name)
+                                        .font(.headline)
+                                }
                                 .foregroundColor(.white)
                                 .listRowBackground(Color.darkGray)
+                            }
                         }
                     }
                     .scrollContentBackground(.hidden)
@@ -65,6 +60,20 @@ struct HomeView: View {
         .onAppear {
             viewModel.getSubscriptions()
         }
+    }
+
+    var SectionHeader: some View {
+        HStack {
+            Text("Subscriptions").foregroundColor(.white)
+            Spacer()
+            NavigationLink(
+                destination: SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel)
+            ) {
+                Text("Add")
+                    .foregroundColor(.white)
+            }
+        }
+        .headerProminence(.increased)
     }
 }
 

@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-struct SubscriptionSettingView: View {
+struct SettingSubscriptionView: View {
     @ObservedObject var viewModel: SettingSubscriptionViewModel
-    @State var name: String = ""
-    @State var cycle: Subscription.CycleType = .MONTH
-    @State var price: Int = 0
-    @State var url: String = ""
-    @State var startDate: Date = Date()
-    @State var status: Subscription.StatusType = .ACTIVE
+    @State var subscription: SettingSubscription
 
-    init(viewModel: SettingSubscriptionViewModel) {
+    init(viewModel: SettingSubscriptionViewModel, subscriptionId: String = "") {
         self.viewModel = viewModel
+        self.subscription = viewModel.getSubscriptionById(subscriptionId)
     }
 
     private func onAddClick() {
@@ -25,12 +21,12 @@ struct SubscriptionSettingView: View {
         if viewModel.registerSubscription(
             userId: userId!,
             subscription: SettingSubscription(
-                name: name,
-                cycle: cycle,
-                price: price,
-                url: url,
-                startDate: startDate,
-                status: status
+                name: subscription.name,
+                cycle: subscription.cycle,
+                price: subscription.price,
+                url: subscription.url,
+                startDate: subscription.startDate,
+                status: subscription.status
             )
         ) {
             print("register subscription is success")
@@ -48,34 +44,34 @@ struct SubscriptionSettingView: View {
                 Section {
                     List {
                         ListRow(
-                            value: $name,
+                            value: $subscription.name,
                             title: "Name",
                             placeholder: "Enter name"
                         )
                         ListRow(
-                            value: $cycle,
+                            value: $subscription.cycle,
                             title: "Cycle",
-                            placeholder: cycle.rawValue
+                            placeholder: subscription.cycle.rawValue
                         )
                         ListRow(
-                            value: $price,
+                            value: $subscription.price,
                             title: "Price",
                             placeholder: "Enter price"
                         )
                         ListRow(
-                            value: $url,
+                            value: $subscription.url,
                             title: "URL",
                             placeholder: "Enter url"
                         )
                         ListRow(
-                            value: $startDate,
+                            value: $subscription.startDate,
                             title: "Start Date",
-                            placeholder: formatDate(startDate)
+                            placeholder: formatDate(subscription.startDate)
                         )
                         ListRow(
-                            value: $status,
+                            value: $subscription.status,
                             title: "Status",
-                            placeholder: status.rawValue
+                            placeholder: subscription.status.rawValue
                         )
                     }
                     .listRowBackground(Color.darkGray)
@@ -84,7 +80,7 @@ struct SubscriptionSettingView: View {
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text(name.isEmpty ? "Register subscription" : name)
+                Text(subscription.name.isEmpty ? "Register subscription" : subscription.name)
                     .foregroundStyle(.white)
                     .fontWeight(.bold)
             }

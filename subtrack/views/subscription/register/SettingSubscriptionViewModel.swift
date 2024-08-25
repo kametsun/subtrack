@@ -46,13 +46,25 @@ class SettingSubscriptionViewModel: ObservableObject {
         }
         return true
     }
+
+    func getSubscriptionById(_ subscriptionId: String) -> SettingSubscription {
+        let subscription = subscriptionRepository.getSubscriptionById(subscriptionId)
+        return SettingSubscription(
+            name: subscription?.name ?? "",
+            cycle: subscription?.cycle ?? .MONTH,
+            price: subscription?.price ?? 0,
+            url: subscription?.url ?? "",
+            startDate: subscription?.startDate ?? Date(),
+            status: subscription?.status ?? .ACTIVE
+        )
+    }
 }
 
 struct SettingSubscription {
-    let name: String
-    let cycle: Subscription.CycleType
-    let price: Int
-    let url: String
-    let startDate: Date
-    let status: Subscription.StatusType
+    var name: String
+    var cycle: Subscription.CycleType
+    var price: Int
+    var url: String
+    var startDate: Date
+    var status: Subscription.StatusType
 }
