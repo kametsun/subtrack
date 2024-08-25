@@ -13,6 +13,7 @@ class AppEnvironment: ObservableObject {
     @Published var registerUserViewModel: RegisterUserViewModel
     @Published var homeViewModel: HomeViewModel
     @Published var settingSubscriptionViewModel: SettingSubscriptionViewModel
+    @Published var settingViewModel: SettingViewModel
 
     init(modelContext: ModelContext) {
         let userRepository = UserRepository(modelContext: modelContext)
@@ -26,6 +27,9 @@ class AppEnvironment: ObservableObject {
         )
         self.settingSubscriptionViewModel = SettingSubscriptionViewModel(
             subscriptionRepository: subscriptionRepository
+        )
+        self.settingViewModel = SettingViewModel(
+            userRepository: userRepository
         )
     }
 }

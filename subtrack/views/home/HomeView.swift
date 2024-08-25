@@ -11,6 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var appEnvironment: AppEnvironment
     @ObservedObject var viewModel: HomeViewModel
     @State private var isAdd: Bool = false
+    @State private var isSetting: Bool = false
 
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -56,6 +57,12 @@ struct HomeView: View {
                     .scrollContentBackground(.hidden)
                 }
                 .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: setIsSetting) {
+                            Image(systemName: "gear")
+                                .foregroundColor(.white)
+                        }
+                    }
                     ToolbarItem(placement: .principal) {
                         Text("SubTrack")
                             .foregroundStyle(.white)
@@ -76,6 +83,11 @@ struct HomeView: View {
         .navigationDestination(isPresented: $isAdd) {
             SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: false)
         }
+        .navigationDestination(isPresented: $isSetting) {
+            SettingView(
+                viewMode: appEnvironment.settingViewModel
+            )
+        }
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.hidden, for: .navigationBar)
         .toolbarBackground(.background, for: .navigationBar)
@@ -84,14 +96,16 @@ struct HomeView: View {
     }
 
     var sectionHeader: some View {
-        HStack {
-            Text("Subscriptions").foregroundColor(.white)
-        }
-        .headerProminence(.increased)
+        Text("Subscriptions").foregroundColor(.white)
+            .headerProminence(.increased)
     }
 
     func setIsAdd() {
         self.isAdd = true
+    }
+
+    func setIsSetting() {
+        self.isSetting = true
     }
 }
 

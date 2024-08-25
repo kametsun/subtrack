@@ -26,4 +26,11 @@ class UserRepository {
         )
         return try modelContext.fetch(fetchDescriptor).first
     }
+
+    func getUser(userId: String) throws -> User? {
+        let fetchDescriptor = FetchDescriptor<User>(
+            predicate: #Predicate{ $0.id == userId }
+        )
+        return try modelContext.fetch(fetchDescriptor).first
+    }
 }
