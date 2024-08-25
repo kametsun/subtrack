@@ -25,7 +25,7 @@ struct LaunchView: View {
             }
         } else {
             VStack {
-                Text("Launch")
+                Text("SubTrack")
                     .font(.largeTitle)
                     .padding()
             }
