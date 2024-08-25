@@ -89,4 +89,18 @@ final class Subscription {
         self.updatedAt = Date()
         self.user = user
     }
+
+    /**
+     * 次回のサブスクリプションの更新日を返す
+     */
+    func nextRenewalDate() -> Date? {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "Asia/Tokyo") ?? TimeZone.current
+        switch cycle {
+        case .MONTH:
+            return calendar.date(byAdding: .month, value: 1, to: startDate)
+        case .YEAR:
+            return calendar.date(byAdding: .year, value: 1, to: startDate)
+        }
+    }
 }

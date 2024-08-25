@@ -10,6 +10,7 @@
 		A50789FF2C7B1E9100B6ABC9 /* CurrencyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50789FE2C7B1E9100B6ABC9 /* CurrencyType.swift */; };
 		A5078A072C7B346E00B6ABC9 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078A062C7B346E00B6ABC9 /* SettingViewModel.swift */; };
 		A5078A092C7B348C00B6ABC9 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078A082C7B348C00B6ABC9 /* SettingView.swift */; };
+		A5078A0B2C7B494A00B6ABC9 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078A0A2C7B494A00B6ABC9 /* NotificationUtil.swift */; };
 		A5106D232C722FD200BB1066 /* SubtrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5106D222C722FD200BB1066 /* SubtrackApp.swift */; };
 		A5106D252C722FD200BB1066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5106D242C722FD200BB1066 /* ContentView.swift */; };
 		A5106D292C722FD200BB1066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5106D282C722FD200BB1066 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		A50789FE2C7B1E9100B6ABC9 /* CurrencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyType.swift; sourceTree = "<group>"; };
 		A5078A062C7B346E00B6ABC9 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		A5078A082C7B348C00B6ABC9 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		A5078A0A2C7B494A00B6ABC9 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		A5106D1F2C722FD200BB1066 /* subtrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = subtrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5106D222C722FD200BB1066 /* SubtrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtrackApp.swift; sourceTree = "<group>"; };
 		A5106D242C722FD200BB1066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				A54DF0CC2C78A7FF00904AD7 /* DateFormatUtils.swift */,
 				A581F0552C78DB98002406BA /* PreviewUtils.swift */,
+				A5078A0A2C7B494A00B6ABC9 /* NotificationUtil.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				A53F22E92C72D15600939FF9 /* Subscription.swift in Sources */,
 				A52BE43E2C742B7D0010D3D5 /* HomeViewModel.swift in Sources */,
 				A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */,
+				A5078A0B2C7B494A00B6ABC9 /* NotificationUtil.swift in Sources */,
 				A5E6288D2C74A25700BEBD2C /* SettingSubscriptionViewModel.swift in Sources */,
 				A52BE4422C7436160010D3D5 /* SubscriptionRepository.swift in Sources */,
 				A581F0562C78DB98002406BA /* PreviewUtils.swift in Sources */,

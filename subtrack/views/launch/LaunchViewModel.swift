@@ -12,7 +12,6 @@ class LaunchViewModel: ObservableObject {
         case registerUser
         case home
     }
-
     @Published var isActive: Bool = false
     @Published var viewState: ViewState = .registerUser
 

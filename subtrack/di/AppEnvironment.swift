@@ -23,7 +23,8 @@ class AppEnvironment: ObservableObject {
             userRepository: userRepository
         )
         self.homeViewModel = HomeViewModel(
-            subscriptionRepository: subscriptionRepository
+            subscriptionRepository: subscriptionRepository,
+            userRepository: userRepository
         )
         self.settingSubscriptionViewModel = SettingSubscriptionViewModel(
             subscriptionRepository: subscriptionRepository

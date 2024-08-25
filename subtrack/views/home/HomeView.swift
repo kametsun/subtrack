@@ -78,8 +78,9 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            viewModel.getSubscriptions()
+            viewModel.loadData()
             requestNotificationAuthorization()
+            viewModel.scheduleAllNotifications()
         }
         .navigationDestination(isPresented: $isAdd) {
             SettingSubscriptionView(viewModel: appEnvironment.settingSubscriptionViewModel, isNewUser: false)
@@ -118,25 +119,5 @@ struct HomeView: View {
                 print("Error: \(error.localizedDescription)")
             }
         }
-    }
-}
-
-struct HomeViewPreview: PreviewProvider {
-    static var previews: some View {
-        let modelContainer = getSharedModelContainerPreview()
-        let appEnvironment = AppEnvironment(
-            modelContext: modelContainer.mainContext
-        )
-        let subscriptionRepository = SubscriptionRepository(
-            modelContext: modelContainer.mainContext
-        )
-        let viewModel = HomeViewModel(
-            subscriptionRepository: subscriptionRepository
-        )
-        createPreviewData(modelContext: modelContainer.mainContext)
-
-        return HomeView(viewModel: viewModel)
-            .environmentObject(appEnvironment)
-            .modelContainer(modelContainer)
     }
 }
