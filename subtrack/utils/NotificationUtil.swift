@@ -34,7 +34,10 @@ func scheduleNotification(for subscription: Subscription, user: User) {
         if let error = error {
             print("Failed to schedule notification: \(error.localizedDescription)")
         } else {
-            print("Notification scheduled for \(subscription.name) on \(notificationDate.description(with: Locale(identifier: "ja_JP")))")
+            print(
+                "Notification scheduled for \(subscription.name) on"
+                  + "\(notificationDate.description(with: Locale(identifier: "ja_JP")))"
+            )
         }
     }
 
