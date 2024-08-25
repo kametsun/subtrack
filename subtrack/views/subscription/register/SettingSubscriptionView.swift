@@ -18,9 +18,10 @@ struct SettingSubscriptionView: View {
 
     private func onAddClick() {
         let userId = UserDefaults.standard.string(forKey: "userId")
-        if viewModel.registerSubscription(
+        if viewModel.settingSubscription(
             userId: userId!,
             subscription: SettingSubscription(
+                id: subscription.id,
                 name: subscription.name,
                 cycle: subscription.cycle,
                 price: subscription.price,
@@ -29,9 +30,9 @@ struct SettingSubscriptionView: View {
                 status: subscription.status
             )
         ) {
-            print("register subscription is success")
+
         } else {
-            print("register subscription is failed")
+
         }
     }
 
@@ -78,6 +79,9 @@ struct SettingSubscriptionView: View {
                 }
             }.scrollContentBackground(.hidden)
         }
+        .onAppear {
+            viewModel.checkSubscriptionExists(subscription.id)
+        }
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(subscription.name.isEmpty ? "Register subscription" : subscription.name)
@@ -86,7 +90,7 @@ struct SettingSubscriptionView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: onAddClick) {
-                    Text("Add")
+                    Text(viewModel.isExists ? "Update" : "Add")
                         .foregroundColor(.white)
                 }
             }

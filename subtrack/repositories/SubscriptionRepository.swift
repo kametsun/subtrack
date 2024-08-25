@@ -45,4 +45,9 @@ class SubscriptionRepository {
         modelContext.insert(subscription)
         try modelContext.save()
     }
+
+    func updateSubscription(_ subscription: Subscription) throws {
+        modelContext.insert(subscription)
+        try modelContext.save()
+    }
 }
