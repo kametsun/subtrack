@@ -60,6 +60,11 @@ struct SettingSubscriptionView: View {
                             placeholder: subscription.cycle.rawValue
                         )
                         ListRow(
+                            value: $subscription.currency,
+                            title: "Currency",
+                            placeholder: subscription.currency.rawValue
+                        )
+                        ListRow(
                             value: $subscription.price,
                             title: "Price",
                             placeholder: "Enter price"
@@ -117,25 +122,24 @@ struct ListRow<T: Equatable & Hashable>: View {
         NavigationLink(destination: EditView(value: $value, title: title)) {
             HStack {
                 Text(title)
-                    .foregroundStyle(.white)
                 Spacer()
                 if let cycleType = value as? Subscription.CycleType {
                     Text(cycleType.rawValue)
-                        .foregroundColor(.white)
                 } else if let statusType = value as? Subscription.StatusType {
                     Text(statusType.rawValue)
-                        .foregroundColor(.white)
+                } else if let currencyType = value as? CurrencyType {
+                    Text(currencyType.rawValue)
                 } else if let stringValue = value as? String {
                     Text(stringValue.isEmpty ? placeholder : stringValue)
-                        .foregroundColor(.white)
                 } else if let intValue = value as? Int {
                     Text(String(intValue))
-                        .foregroundColor(.white)
+                } else if let doubleValue = value as? Double {
+                    Text(String(doubleValue))
                 } else if let dateValue = value as? Date {
                     Text(formatDate(dateValue))
-                        .foregroundColor(.white)
                 }
             }
+            .foregroundColor(.white)
         }
     }
 }
@@ -197,6 +201,30 @@ struct EditView<T: Equatable & Hashable>: View {
                         }
                     ))
                     .keyboardType(.numberPad)
+                    .padding()
+                    .background(.white)
+                    .cornerRadius(10)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.clear, lineWidth: 0)
+                    }
+                    Spacer()
+                } else if value is Double {
+                    TextField(title, text: Binding(
+                        get: {
+                            if let doubleValue = value as? Double {
+                                return String(doubleValue)
+                            } else {
+                                return ""
+                            }
+                        },
+                        set: { newValue in
+                            if let intValue = Double(newValue), let typedValue = intValue as? T {
+                                value = typedValue
+                            }
+                        }
+                    ))
+                    .keyboardType(.decimalPad)
                     .padding()
                     .background(.white)
                     .cornerRadius(10)
