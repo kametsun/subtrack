@@ -29,11 +29,12 @@ struct HomeView: View {
             } else {
                 VStack {
                     List {
-                        Section(header: SectionHeader) {
+                        Section(header: sectionHeader) {
                             ForEach(viewModel.subscriptions) {subscription in
                                 NavigationLink(
                                     destination: SettingSubscriptionView(
-                                        viewModel: appEnvironment.settingSubscriptionViewModel, subscriptionId: subscription.id
+                                        viewModel: appEnvironment.settingSubscriptionViewModel,
+                                        subscriptionId: subscription.id
                                     )
                                 ) {
                                     Text(subscription.name)
@@ -62,7 +63,7 @@ struct HomeView: View {
         }
     }
 
-    var SectionHeader: some View {
+    var sectionHeader: some View {
         HStack {
             Text("Subscriptions").foregroundColor(.white)
             Spacer()
