@@ -16,6 +16,7 @@
 		A5106D292C722FD200BB1066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5106D282C722FD200BB1066 /* Assets.xcassets */; };
 		A5106D2C2C722FD200BB1066 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5106D2B2C722FD200BB1066 /* Preview Assets.xcassets */; };
 		A5106D342C72317900BB1066 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5106D332C72317900BB1066 /* User.swift */; };
+		A510BD6E2C7D672100D8418E /* GenreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510BD6D2C7D672100D8418E /* GenreType.swift */; };
 		A52BE43E2C742B7D0010D3D5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */; };
 		A52BE4402C742B8A0010D3D5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE43F2C742B8A0010D3D5 /* HomeView.swift */; };
 		A52BE4422C7436160010D3D5 /* SubscriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BE4412C7436160010D3D5 /* SubscriptionRepository.swift */; };
@@ -46,6 +47,7 @@
 		A5106D282C722FD200BB1066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5106D2B2C722FD200BB1066 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5106D332C72317900BB1066 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A510BD6D2C7D672100D8418E /* GenreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreType.swift; sourceTree = "<group>"; };
 		A52BE43D2C742B7D0010D3D5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A52BE43F2C742B8A0010D3D5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A52BE4412C7436160010D3D5 /* SubscriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRepository.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				A5106D332C72317900BB1066 /* User.swift */,
 				A53F22E82C72D15600939FF9 /* Subscription.swift */,
 				A50789FE2C7B1E9100B6ABC9 /* CurrencyType.swift */,
+				A510BD6D2C7D672100D8418E /* GenreType.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				A50789FF2C7B1E9100B6ABC9 /* CurrencyType.swift in Sources */,
 				A53F22ED2C72E35C00939FF9 /* LaunchViewModel.swift in Sources */,
 				A53F22F72C72F10100939FF9 /* UserRepository.swift in Sources */,
+				A510BD6E2C7D672100D8418E /* GenreType.swift in Sources */,
 				A5078A072C7B346E00B6ABC9 /* SettingViewModel.swift in Sources */,
 				A5106D232C722FD200BB1066 /* SubtrackApp.swift in Sources */,
 				A5E6288B2C74A18400BEBD2C /* SettingSubscriptionView.swift in Sources */,

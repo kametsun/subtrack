@@ -40,28 +40,18 @@ final class Subscription {
     @Relationship(inverse: \User.subscriptions)
     var user: User?
 
-    enum CycleType: String, Codable, CaseIterable, CustomStringConvertible {
-        var id: String { self.rawValue }
+    enum CycleType: String, Codable, CaseIterable {
         /** 月契約 */
         case MONTH
         /** 年契約 */
         case YEAR
-
-        var description: String {
-            return self.rawValue
-        }
     }
 
-    enum StatusType: String, Codable, CaseIterable, CustomStringConvertible {
-        var id: String { self.rawValue }
+    enum StatusType: String, Codable, CaseIterable {
         /** アクティブ */
         case ACTIVE
         /** キャンセル */
         case CANCELLED
-
-        var description: String {
-            return self.rawValue
-        }
     }
 
     init(
