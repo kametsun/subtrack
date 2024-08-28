@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ * 起動画面
+ */
 struct LaunchView: View {
     @EnvironmentObject var appEnvironment: AppEnvironment
     @Environment(\.colorScheme) var colorScheme
