@@ -30,6 +30,7 @@
 		A53F23002C732A0A00939FF9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F22FF2C732A0A00939FF9 /* Color.swift */; };
 		A53F23032C732A7E00939FF9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F23022C732A7E00939FF9 /* CustomTextField.swift */; };
 		A53F23052C732CEE00939FF9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F23042C732CEE00939FF9 /* CustomButton.swift */; };
+		A5423E662C8B459300DB0294 /* GetFaviconURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5423E652C8B459300DB0294 /* GetFaviconURL.swift */; };
 		A54DF0CD2C78A7FF00904AD7 /* DateFormatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DF0CC2C78A7FF00904AD7 /* DateFormatUtils.swift */; };
 		A581F0562C78DB98002406BA /* PreviewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A581F0552C78DB98002406BA /* PreviewUtils.swift */; };
 		A5E6288B2C74A18400BEBD2C /* SettingSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6288A2C74A18400BEBD2C /* SettingSubscriptionView.swift */; };
@@ -61,6 +62,7 @@
 		A53F22FF2C732A0A00939FF9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A53F23022C732A7E00939FF9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A53F23042C732CEE00939FF9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		A5423E652C8B459300DB0294 /* GetFaviconURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFaviconURL.swift; sourceTree = "<group>"; };
 		A54DF0CC2C78A7FF00904AD7 /* DateFormatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatUtils.swift; sourceTree = "<group>"; };
 		A581F0552C78DB98002406BA /* PreviewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUtils.swift; sourceTree = "<group>"; };
 		A5E6288A2C74A18400BEBD2C /* SettingSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSubscriptionView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				A54DF0CC2C78A7FF00904AD7 /* DateFormatUtils.swift */,
 				A581F0552C78DB98002406BA /* PreviewUtils.swift */,
 				A5078A0A2C7B494A00B6ABC9 /* NotificationUtil.swift */,
+				A5423E652C8B459300DB0294 /* GetFaviconURL.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				A53F23052C732CEE00939FF9 /* CustomButton.swift in Sources */,
 				A5106D342C72317900BB1066 /* User.swift in Sources */,
 				A53F22EF2C72E51F00939FF9 /* LaunchView.swift in Sources */,
+				A5423E662C8B459300DB0294 /* GetFaviconURL.swift in Sources */,
 				A52BE4402C742B8A0010D3D5 /* HomeView.swift in Sources */,
 				A5078A092C7B348C00B6ABC9 /* SettingView.swift in Sources */,
 				A54DF0CD2C78A7FF00904AD7 /* DateFormatUtils.swift in Sources */,

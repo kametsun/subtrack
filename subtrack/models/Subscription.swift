@@ -93,12 +93,4 @@ final class Subscription {
             return calendar.date(byAdding: .year, value: 1, to: startDate)
         }
     }
-
-    /**
-     * favicon.icoを返す
-     */
-    func getFaviconURL() -> URL? {
-        guard let url = URL(string: self.url) else { return nil}
-        return URL(string: "\(url.scheme ?? "https")://\(url.host ?? "")/favicon.ico")
-    }
 }

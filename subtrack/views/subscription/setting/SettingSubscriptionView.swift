@@ -124,6 +124,21 @@ struct ListRow<T: Equatable & Hashable>: View {
         NavigationLink(destination: EditView(value: $value, title: title)) {
             HStack {
                 Text(title)
+                if let stringValue = value as? String, title == "URL" {
+                    if let faviconURL = getFaviconURL(url: stringValue) {
+                        AsyncImage(url: faviconURL) { phase in
+                            if let image = phase.image {
+                                image.resizable()
+                                    .scaledToFit()
+                                    .frame(width: 28, height: 28)
+                            } else if phase.error != nil {
+                                Image(systemName: "questionmark.app")
+                            } else {
+                                ProgressView()
+                            }
+                        }
+                    }
+                }
                 Spacer()
                 if let cycleType = value as? Subscription.CycleType {
                     Text(cycleType.rawValue)

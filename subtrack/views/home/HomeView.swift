@@ -43,7 +43,7 @@ struct HomeView: View {
                                     )
                                 ) {
                                     HStack {
-                                        if let faviconURL = subscription.getFaviconURL() {
+                                        if let faviconURL = getFaviconURL(url: subscription.url) {
                                             AsyncImage(url: faviconURL) { phase in
                                                 if let image = phase.image {
                                                     image.resizable()
