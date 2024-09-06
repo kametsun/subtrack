@@ -8,8 +8,7 @@
 import SwiftUI
 
 extension Color {
-    static let background = Color(UIColor(red: 13/255, green: 13/255, blue: 13/255, alpha: 1.0))
-    static let text = Color(UIColor.white)
-    static let placeholder = Color(UIColor.lightGray)
-    static let darkGray = Color(UIColor(red: 80/255, green: 80/255, blue: 80/255, alpha: 1.0))
+    static let primaryColor = Color("PrimaryColor")
+    static let secondaryColor = Color("SecondaryColor")
+    static let textColor = Color("TextColor")
 }

@@ -36,7 +36,7 @@ func scheduleNotification(for subscription: Subscription, user: User) {
         } else {
             print(
                 "Notification scheduled for \(subscription.name) on"
-                  + "\(notificationDate.description(with: Locale(identifier: "ja_JP")))"
+                    + "\(notificationDate.description(with: Locale(identifier: "ja_JP")))"
             )
         }
     }

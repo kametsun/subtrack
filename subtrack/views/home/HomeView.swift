@@ -19,7 +19,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            Color.background
+            Color.primaryColor
                 .ignoresSafeArea()
 
             if viewModel.subscriptions.isEmpty {
@@ -43,14 +43,30 @@ struct HomeView: View {
                                     )
                                 ) {
                                     HStack {
+                                        if let faviconURL = getFaviconURL(url: subscription.url) {
+                                            AsyncImage(url: faviconURL) { phase in
+                                                if let image = phase.image {
+                                                    image.resizable()
+                                                        .scaledToFit()
+                                                        .frame(width: 28, height: 28)
+                                                } else if phase.error != nil {
+                                                    Image(systemName: "questionmark.app")
+                                                } else {
+                                                    ProgressView()
+                                                }
+                                            }
+                                        }
                                         Text(subscription.name)
                                             .font(.headline)
                                         Spacer()
+                                        Image(systemName: CurrencyType.currencyIcon(for: subscription.currency))
+                                            .symbolRenderingMode(.palette)
+                                            .foregroundStyle(Color.textColor)
                                         Text(String(subscription.price))
                                     }
                                 }
-                                .foregroundColor(.white)
-                                .listRowBackground(Color.darkGray)
+                                .foregroundColor(.textColor)
+                                .listRowBackground(Color.secondaryColor)
                             }
                         }
                     }
