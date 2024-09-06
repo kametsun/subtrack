@@ -43,6 +43,19 @@ struct HomeView: View {
                                     )
                                 ) {
                                     HStack {
+                                        if let faviconURL = subscription.getFaviconURL() {
+                                            AsyncImage(url: faviconURL) { phase in
+                                                if let image = phase.image {
+                                                    image.resizable()
+                                                        .scaledToFit()
+                                                        .frame(width: 28, height: 28)
+                                                } else if phase.error != nil {
+                                                    Image(systemName: "questionmark.app")
+                                                } else {
+                                                    ProgressView()
+                                                }
+                                            }
+                                        }
                                         Text(subscription.name)
                                             .font(.headline)
                                         Spacer()
